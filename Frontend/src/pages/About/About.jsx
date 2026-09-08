@@ -1,7 +1,17 @@
+import Hero from "./Hero.jsx";
+import IntroSection from "./intro.jsx";
+import SariyaStandard from "./standards.jsx";
+import ContactSection from "./contact.jsx";
+
 function About(){
   return(
     <div>
-      <h1>About</h1>
+      <>
+      <Hero/>
+      <IntroSection/>
+      <SariyaStandard/>
+      <ContactSection/>
+      </>
     </div>
   )
 }

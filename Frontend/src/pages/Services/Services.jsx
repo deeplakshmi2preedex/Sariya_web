@@ -1,8 +1,10 @@
+import ServiceComponent from "../Services/servicePage/serviceComponent.jsx"
+
 function Services() {
   return (
-    <div>
-      <h1>Services</h1>
-    </div>
+    <>
+    <ServiceComponent/>
+    </>
   );
 }
 

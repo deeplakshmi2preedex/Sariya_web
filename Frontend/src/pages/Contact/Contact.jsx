@@ -1,6 +1,10 @@
+import ContactSection from "./CTA.jsx";
+
 function Contact(){
   return(
-    <div>Contact us</div>
+    <>
+    <ContactSection/>
+    </>
   )
 }
 
