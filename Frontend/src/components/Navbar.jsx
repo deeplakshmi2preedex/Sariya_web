@@ -30,9 +30,7 @@ export default function Navbar() {
   return (
     <div>
       <header className="relative z-50">
-        {/* ==================================================
-          NAVBAR
-          ================================================== */}
+        {/*  NAVBAR*/}
 
         <div className="navbar-wrapper">
           <nav
@@ -42,9 +40,7 @@ export default function Navbar() {
             items-center
             justify-between
             rounded-full
-            border
-            border-white/10
-            bg-[#0b1422]/90
+            bg-[linear-gradient(to_right,rgba(22,36,58,0.90)_0%,rgba(22,36,58,0.90)_38%,rgba(16,26,41,0.88)_48%,rgba(8,14,23,0.78)_62%,rgba(2,4,7,0.70)_78%,rgba(0,0,0,0.65)_100%)]
             px-[34px]
             shadow-2xl
             shadow-black/20
@@ -66,9 +62,7 @@ export default function Navbar() {
               <span className="ml-1 inline-block h-[5px] w-[5px] bg-blue-700" />
             </Link>
 
-            {/* ==================================================
-              DESKTOP NAVIGATION
-              ================================================== */}
+            {/* DESKTOP NAVIGATION*/}
 
             <div className="hidden items-center gap-[29px] md:flex">
               <NavLink to="/" className={navLinkClass}>
@@ -173,9 +167,7 @@ export default function Navbar() {
               </NavLink>
             </div>
 
-            {/* ==================================================
-              CALL NOW
-              ================================================== */}
+            {/* CALL NOW */}
 
             <Link
               to="/contact"

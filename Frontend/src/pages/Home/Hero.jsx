@@ -25,16 +25,14 @@ export default function Hero() {
         "
       >
 
-        {/* ==================================================
-            LEFT CONTENT
-            ================================================== */}
+        {/* LEFT CONTENT */}
 
         <div className="max-w-[760px]">
 
           <p
             className="
               mb-[30px]
-              text-[18px]
+              text-[clamp(1rem,1.2vw,1.125rem)]
               font-bold
               leading-none
               tracking-[0.055em]
@@ -47,13 +45,11 @@ export default function Hero() {
 
           <h1
             className="
-              text-[52px]
+              text-[clamp(2.25rem,3.8vw,3.5rem)]
               font-semibold
-              leading-[1.02]
-              tracking-[-0.045em]
+              leading-[1.3]
+              tracking-[0.01em]
               text-white
-              sm:text-[58px]
-              lg:text-[64px]
             "
           >
             SYSTEM THAT RUNS
@@ -81,7 +77,7 @@ export default function Hero() {
             className="
               mt-[36px]
               max-w-[790px]
-              text-[16px]
+              text-[clamp(0.875rem,1vw,1rem)]
               font-normal
               leading-[1.65]
               text-white
@@ -114,7 +110,7 @@ export default function Hero() {
                 bg-blue-600
                 px-[34px]
                 py-[15px]
-                text-[16px]
+                text-[clamp(0.875rem,1vw,1rem)]
                 font-bold
                 text-white
                 shadow-lg
@@ -138,7 +134,7 @@ export default function Hero() {
                 bg-white
                 px-[38px]
                 py-[15px]
-                text-[16px]
+                text-[clamp(0.875rem,1vw,1rem)]
                 font-bold
                 text-[#082F7B]
                 transition
@@ -201,14 +197,14 @@ export default function Hero() {
           >
             <p
               className="
-                text-[16px]
+                text-[clamp(0.875rem,1vw,1rem)]
                 font-normal
                 leading-[1.45]
                 text-white
               "
             >
-              We harness the pure power of data, creativity, and instinct
-              to build business solutions that drive ahead.
+              We harness the pure power of data, creativity, and instinct to
+              build business solutions that think ahead.
             </p>
           </div>
 

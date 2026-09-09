@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400&display=swap');
 @import "tailwindcss";
 
 :root{
@@ -23,6 +24,27 @@ body {
   background:#000;
 
   background-attachment: fixed;
+}
+
+@theme {
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* All headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-jakarta);
+}
+
+/* All paragraphs */
+p {
+  font-family: var(--font-inter);
+  font-weight: 400;
 }
 
 ::selection {
@@ -71,20 +93,14 @@ body {
     0 30px 90px rgba(0, 0, 0, 0.65);
 }
 
-
-
-
 .navbar-wrapper {
   width:100%;
-
   margin:20;
 }
 
-.container-page {
-  width: calc(100% - 110px);
-
-  margin-inline: auto;
-}
+/* .container-page {
+  
+} */
 
 
 .hero-grid {
@@ -123,9 +139,7 @@ body {
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/*   TABLET */
 
 @media (max-width: 1200px) {
 
@@ -139,9 +153,7 @@ body {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/*  MOBILE  */
 
 @media (max-width: 768px) {
 
