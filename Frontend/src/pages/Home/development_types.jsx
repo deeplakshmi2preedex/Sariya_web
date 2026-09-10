@@ -78,15 +78,15 @@ export default function DevelopmentTypes() {
                   )}
                 </div>
 
-                <p className="text-[clamp(12px,1vw,14px)] font-semibold text-black/60">
+                <p className="text-[clamp(14px,1vw,16px)] font-bold text-black leading-[2.5] tracking-[1.5]">
                   {eyebrow}
                 </p>
 
-                <h3 className="mt-5 text-[clamp(16px,1.8vw,22px)] font-semibold leading-tight">
+                <h3 className="mt-10 mb-10 text-[clamp(16px,2vw,22px)] font-semibold leading-[1.5] tracking-[1.1px] text-[#082F7B]">
                   {title}
                 </h3>
 
-                <p className="mt-4 text-[clamp(12px,1vw,14px)] leading-5 text-black/50">
+                <p className="mb-12 text-[clamp(14px,1vw,16px)] text-[#4D5A6E] leading-[1.5] tracking-[1.2px]">
                   {body}
                 </p>
 
@@ -94,9 +94,12 @@ export default function DevelopmentTypes() {
                   {items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-2 text-[clamp(12px,1vw,14px)] text-black/65"
+                      className="flex items-center gap-3 text-[clamp(14px,1vw,16px)] text-[#505967] font-bold"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                      <span className="flex h-4 w-4 items-center justify-center rounded-full font-[10px]">
+                        <i className="fa-regular fa-circle-check text-blue-700"></i>
+                      </span>
+
                       {item}
                     </li>
                   ))}
