@@ -99,7 +99,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="m-10 rounded-4xl bg-gradient-to-br from-emerald-900 to-[#022C22]"
+      className="m-10 mb-25 rounded-4xl bg-gradient-to-br from-emerald-900 to-[#022C22]"
     >
       {/* Outline Div */}
       <div className="rounded-4xl border border-white/10 p-15">

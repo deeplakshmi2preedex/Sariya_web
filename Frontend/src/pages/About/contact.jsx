@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="border-t border-white/5 bg-black py-10">
+    <section id="contact" className="border-t border-white/5 bg-black py-10 mb-12">
       <div className="page-width text-center">
         {/* Logo */}
         <p className="text-[clamp(25px,4vw,35px)] font-bold text-white">

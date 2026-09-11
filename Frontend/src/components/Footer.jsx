@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-30 overflow-hidden text-white">
+    <footer className="relative overflow-hidden text-white">
       {/* ================= BACKGROUND ================= */}
       <div className="absolute inset-0 -z-0">
         <div className="absolute inset-0 bg-black" />
