@@ -1,9 +1,9 @@
-import ServiceComponent from "../Services/servicePage/serviceComponent.jsx"
+import ServicePage from "./servicePage/servicePage.jsx";
 
 function Services() {
   return (
     <>
-    <ServiceComponent/>
+      <ServicePage />
     </>
   );
 }

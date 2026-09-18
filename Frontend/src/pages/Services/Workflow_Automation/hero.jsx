@@ -24,7 +24,9 @@ function Hero() {
               text-white
             "
           >
-            Services
+            Workflow
+            <br />
+            Automation
           </h1>
 
           <p
@@ -37,8 +39,7 @@ function Hero() {
               text-white
             "
           >
-            Custom engineered solutions built to scale your business operations
-            and remove manual bottlenecks.
+           Connecting the dots between your apps and your team's output.
           </p>
         </div>
       </div>

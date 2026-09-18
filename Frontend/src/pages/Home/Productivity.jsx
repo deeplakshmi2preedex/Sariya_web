@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import EmployeeProduc from "../../assets/Home/EmployeeProduc.jpg";
 import cosmetics from "../../assets/Home/cosmetics.png";
@@ -21,6 +21,7 @@ const sections = [
     project turnarounds, and drastically boost overall workplace output
     efficiency.`,
   },
+
   {
     image: cosmetics,
     title: "Cosmetics",
@@ -28,6 +29,7 @@ const sections = [
     lines effortlessly. Enhance your virtual features, automate restock
     alerts, and build engaging applications for modern consumers.`,
   },
+
   {
     image: Team,
     title: "Team Development",
@@ -36,6 +38,7 @@ const sections = [
     streamline onboarding processes, and unlock the true potential of
     employees.`,
   },
+
   {
     image: Corporate,
     title: "Corporate",
@@ -44,6 +47,7 @@ const sections = [
     streamline onboarding processes, and unlock the true potential of
     employees.`,
   },
+
   {
     image: businessOwner,
     title: "Business Owner",
@@ -52,6 +56,7 @@ const sections = [
     tasks, allowing visionary leaders to focus entirely on expanding market
     presence.`,
   },
+
   {
     image: logistics,
     title: "Logistics",
@@ -59,6 +64,7 @@ const sections = [
     route mapping and fleet tracking. Reduce operational costs, improve
     delivery speeds, and ensure seamless communication across global chains.`,
   },
+
   {
     image: handbag,
     title: "Hand Bags",
@@ -69,141 +75,114 @@ const sections = [
 ];
 
 export default function Productivity() {
-  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const slider = sliderRef.current;
-
-    if (!slider) return;
-
     const interval = setInterval(() => {
-      const card = slider.querySelector(".productivity-card");
-
-      if (!card) return;
-
-      const cardWidth = card.offsetWidth;
-
-      const nextPosition = slider.scrollLeft + cardWidth + 24;
-
-      if (nextPosition >= slider.scrollWidth - slider.clientWidth - 10) {
-        slider.scrollTo({
-          left: 0,
-          behavior: "smooth",
-        });
-      } else {
-        slider.scrollTo({
-          left: nextPosition,
-          behavior: "smooth",
-        });
-      }
+      setActiveIndex((prevIndex) => {
+        return (prevIndex + 1) % sections.length;
+      });
     }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="w-full px-4 p-10 sm:px-6 md:px-8 lg:px-10">
-      <div
-        ref={sliderRef}
-        className="
-          flex
-          w-full
-          gap-6
-          overflow-x-auto
-          scroll-smooth
-          snap-x
-          snap-mandatory
-          pb-2
-          [scrollbar-width:none]
-          [&::-webkit-scrollbar]:hidden
-        "
-      >
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className="
-              productivity-card
-              relative
-              flex
-              min-h-[420px]
-              w-[88vw]
-              min-w-[88vw]
-              flex-shrink-0
-              snap-center
-              items-end
-              overflow-hidden
-              rounded-[30px]
-              border
-              border-white/10
-              bg-cover
-              bg-center
-              p-5
+    <section className="w-full px-4 py-10 sm:px-6 md:px-8 lg:px-10">
+      
+      {/* VIEWPORT */}
+      <div className="w-full overflow-hidden rounded-[30px]">
+        
+        {/* SLIDER TRACK */}
+        <div
+          className="flex transition-transform duration-1000 ease-in-out"
+          style={{
+            transform: `translateX(-${activeIndex * 100}%)`,
+          }}
+        >
+          {sections.map((section, index) => (
+            <div
+              key={index}
+              className="
+                productivity-card
+                relative
+                flex
+                min-h-[420px]
+                w-full
+                min-w-full
+                flex-shrink-0
+                items-end
+                overflow-hidden
+                rounded-[30px]
+                border
+                border-white/10
+                bg-cover
+                bg-center
+                p-5
 
-              sm:min-h-[480px]
-              sm:w-[75vw]
-              sm:min-w-[75vw]
-              sm:p-7
+                sm:min-h-[480px]
+                sm:p-7
 
-              md:min-h-[520px]
-              md:w-[65vw]
-              md:min-w-[65vw]
-              md:p-8
+                md:min-h-[520px]
+                md:p-8
 
-              lg:min-h-[550px]
-              lg:w-[calc(100vw-80px)]
-              lg:min-w-[calc(100vw-80px)]
-              lg:p-10
+                lg:min-h-[550px]
+                lg:p-10
 
-              xl:w-[1350px]
-              xl:min-w-[1350px]
-            "
-            style={{
-              backgroundImage: `linear-gradient(
-                0deg,
-                rgba(0,0,0,.82),
-                rgba(0,0,0,.08)
-              ), url(${section.image})`,
-            }}
-          >
-            <div className="relative z-10 w-full max-w-4xl">
-              <h2
-                className="
-                  m-0
-                  text-[32px]
-                  font-bold
-                  leading-[1.05]
-                  tracking-[-1px]
+                xl:min-h-[600px]
+              "
+              style={{
+                backgroundImage: `
+                  linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.82),
+                    rgba(0,0,0,.08)
+                  ),
+                  url(${section.image})
+                `,
+              }}
+            >
+              {/* CONTENT */}
+              <div className="relative z-10 w-full max-w-4xl">
+                <h2
+                  className="
+                    m-0
+                    text-[32px]
+                    font-bold
+                    leading-[1.2]
+                    tracking-[-1px]
 
-                  sm:text-[38px]
+                    sm:text-[38px]
 
-                  md:text-[44px]
+                    md:text-[44px]
 
-                  lg:text-[50px]
-                "
-              >
-                {section.title}
-              </h2>
+                    lg:text-[50px]
+                  "
+                >
+                  {section.title}
+                </h2>
 
-              <p
-                className="
-                  mt-4
-                  max-w-3xl
-                  text-[14px]
-                  leading-[1.6]
-                  text-[#BCC7DB]
+                <p
+                  className="
+                    mt-4
+                    max-w-3xl
+                    text-[14px]
+                    leading-[1.6]
+                    text-[#BCC7DB]
 
-                  sm:text-[15px]
+                    sm:text-[15px]
 
-                  md:text-[16px]
+                    md:text-[16px]
 
-                  lg:text-[17px]
-                "
-              >
-                {section.text}
-              </p>
+                    lg:text-[17px]
+                  "
+                >
+                  {section.text}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

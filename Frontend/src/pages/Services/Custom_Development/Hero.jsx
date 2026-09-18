@@ -24,7 +24,9 @@ function Hero() {
               text-white
             "
           >
-            Services
+            Custom
+            <br />
+            Development
           </h1>
 
           <p
@@ -37,8 +39,7 @@ function Hero() {
               text-white
             "
           >
-            Custom engineered solutions built to scale your business operations
-            and remove manual bottlenecks.
+            Proprietary software engines built to your exact specifications.
           </p>
         </div>
       </div>
