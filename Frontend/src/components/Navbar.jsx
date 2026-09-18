@@ -42,15 +42,16 @@ export default function Navbar() {
           <nav
             className="
               flex
-              h-[86px]
+              h-[clamp(60px,6vw,86px)]
               items-center
               justify-between
               rounded-full
               bg-[linear-gradient(to_right,rgba(22,36,58,0.90)_0%,rgba(22,36,58,0.90)_38%,rgba(16,26,41,0.88)_48%,rgba(8,14,23,0.78)_62%,rgba(2,4,7,0.70)_78%,rgba(0,0,0,0.65)_100%)]
-              px-[34px]
+              px-[clamp(12px,2.35vw,34px)]
               shadow-2xl
               shadow-black/20
               backdrop-blur-xl
+              w-full min-w-0
             "
           >
             {/* ================= LOGO ================= */}
@@ -71,7 +72,7 @@ export default function Navbar() {
 
             {/* ================= DESKTOP NAVIGATION ================= */}
 
-            <div className="hidden items-center gap-[29px] md:flex">
+            <div className="hidden items-center  gap-[clamp(16px,2vw,29px)]  min-[1025px]:flex">
               {/* HOME */}
 
               <NavLink to="/" className={navLinkClass}>
@@ -106,8 +107,8 @@ export default function Navbar() {
                     duration-200
                     ${
                       servicesOpen
-                        ? "text-amber-300"
-                        : "text-white/70 hover:text-amber-300"
+                        ? "text-[#CAB582]"
+                        : "text-white/70 hover:text-[#CAB582]"
                     }
                   `}
                 >
@@ -173,7 +174,7 @@ export default function Navbar() {
                           transition-all
                           duration-200
                           hover:bg-white/10
-                          hover:text-amber-300
+                          hover:text-[#CAB582]
                         "
                       >
                         {service.name}
@@ -197,40 +198,72 @@ export default function Navbar() {
             </div>
 
             {/* ================= CALL NOW ================= */}
-
-            <Link
-              to="/contact"
+            <div
               className="
+    flex
+    shrink-0
+    items-center
+    gap-[clamp(6px,1vw,14px)]
+  "
+            >
+              <Link
+                to="/contact"
+                className="
                 hidden
                 rounded-full
                 bg-white
-                px-[38px]
-                py-[15px]
-                text-[16px]
+                 px-[clamp(16px,2.65vw,38px)]
+                 py-[clamp(9px,1vw,15px)]
+                 text-[clamp(12px,1.5vw,16px)]
                 font-bold
                 text-[#082f7b]
-                transition
+                transition-all
                 hover:bg-blue-100
-                sm:block
+                 duration-200
+                 min-[1025px]:block
+                 shrink-0
+                 whitespace-nowrap
               "
-            >
-              Call Now
-            </Link>
+              >
+                Call Now
+              </Link>
 
-            {/* ================= MOBILE BUTTON ================= */}
+              {/* ================= MOBILE BUTTON ================= */}
 
-            <button
-              onClick={() => setOpen(!open)}
-              className="
+              <button
+                onClick={() => setOpen(!open)}
+                className="
+               flex
+               shrink-0
+               items-center
+               justify-center
                 rounded-full
-                p-2
-                text-white
-                md:hidden
+                p-[clamp(7px,0.8vw,10px)]
+              text-white
+                transition-all
+                duration-200
+                 min-[1025px]:hidden
               "
-              aria-label="Toggle navigation"
-            >
-              {open ? <X size={20} /> : <Menu size={20} />}
-            </button>
+                aria-label="Toggle navigation"
+                aria-expanded={open}
+              >
+                {open ? (
+                  <X
+                    className="
+          h-[clamp(18px,1.8vw,24px)]
+          w-[clamp(18px,1.8vw,24px)]
+        "
+                  />
+                ) : (
+                  <Menu
+                    className="
+          h-[clamp(18px,1.8vw,24px)]
+          w-[clamp(18px,1.8vw,24px)]
+        "
+                  />
+                )}
+              </button>
+            </div>
           </nav>
 
           {/* ================= MOBILE NAVIGATION ================= */}
@@ -245,7 +278,7 @@ export default function Navbar() {
                 bg-[#0b1422]/95
                 p-4
                 backdrop-blur-xl
-                md:hidden
+                min-[1025px]:hidden
               "
             >
               <div className="grid gap-1">
@@ -257,8 +290,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `rounded-xl px-4 py-3 text-sm transition ${
                       isActive
-                        ? "bg-amber-300/10 text-amber-300 underline underline-offset-4"
-                        : "text-white/75 hover:bg-amber-300/10 hover:text-amber-300"
+                        ? "bg-amber-300/10 text-[#CAB582] underline underline-offset-4"
+                        : "text-white/75 hover:bg-amber-300/10 hover:text-[#CAB582]"
                     }`
                   }
                 >
@@ -273,8 +306,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `rounded-xl px-4 py-3 text-sm transition ${
                       isActive
-                        ? "bg-amber-300/10 text-amber-300 underline underline-offset-4"
-                        : "text-white/75 hover:bg-amber-300/10 hover:text-amber-300"
+                        ? "bg-amber-300/10 text-[#CAB582] underline underline-offset-4"
+                        : "text-white/75 hover:bg-amber-300/10 hover:text-[#CAB582]"
                     }`
                   }
                 >
@@ -302,7 +335,7 @@ export default function Navbar() {
                         text-white/75
                         transition
                         hover:bg-amber-300/10
-                        hover:text-amber-300
+                        hover:text-[#CAB582]
                       "
                     >
                       Services
@@ -319,7 +352,7 @@ export default function Navbar() {
                         text-white/75
                         transition
                         hover:bg-amber-300/10
-                        hover:text-amber-300
+                        hover:text-[#CAB582]
                       "
                       aria-label="Toggle services"
                     >
@@ -355,7 +388,7 @@ export default function Navbar() {
                             text-white/55
                             transition
                             hover:bg-amber-300/10
-                            hover:text-amber-300
+                            hover:text-[#CAB582]
                           "
                         >
                           {service.name}
@@ -373,8 +406,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `rounded-xl px-4 py-3 text-sm transition ${
                       isActive
-                        ? "bg-amber-300/10 text-amber-300 underline underline-offset-4"
-                        : "text-white/75 hover:bg-amber-300/10 hover:text-amber-300"
+                        ? "bg-amber-300/10 text-[#CAB582] underline underline-offset-4"
+                        : "text-white/75 hover:bg-amber-300/10 hover:text-[#CAB582]"
                     }`
                   }
                 >
@@ -389,8 +422,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `rounded-xl px-4 py-3 text-sm transition ${
                       isActive
-                        ? "bg-amber-300/10 text-amber-300 underline underline-offset-4"
-                        : "text-white/75 hover:bg-amber-300/10 hover:text-amber-300"
+                        ? "bg-amber-300/10 text-[#CAB582] underline underline-offset-4"
+                        : "text-white/75 hover:bg-amber-300/10 hover:text-[#CAB582]"
                     }`
                   }
                 >
