@@ -570,7 +570,8 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             {/* Facebook */}
             <a
-              href="#"
+              href="https://www.facebook.com/sariyadesigns/"
+              target="_blank"
               aria-label="Facebook"
               className="
                 flex
@@ -592,7 +593,8 @@ export default function Footer() {
 
             {/* Instagram */}
             <a
-              href="#"
+              href="https://www.instagram.com/sariya.designs"
+              target="_blank"
               aria-label="Instagram"
               className="
                 flex

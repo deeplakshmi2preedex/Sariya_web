@@ -8,7 +8,7 @@ import Navbar from "../../../components/Navbar";
 function PlatformDevelopment() {
   return (
     <>
-      <div className="container">
+      <div className="home-shell">
         <div className="pt-5 px-25">
           <Navbar />
         </div>

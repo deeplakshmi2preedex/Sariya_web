@@ -8,7 +8,7 @@ import CTA from "./contact.jsx";
 export default function ServicePage() {
   return (
     <>
-      <div className="container">
+      <div className="home-shell">
         <Navbar />
 
         <main>

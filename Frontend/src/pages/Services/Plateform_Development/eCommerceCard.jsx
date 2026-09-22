@@ -45,7 +45,7 @@ function ECommerceCard() {
                 text-white
               "
             >
-             Lorem ipsum dolor 
+             Enterprise E-commerce Platforms
             </h3>
           </div>
         </div>

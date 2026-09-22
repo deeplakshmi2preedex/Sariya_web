@@ -8,7 +8,7 @@ import CTA from "./CTA.jsx";
 function Workflow_automation() {
   return (
     <>
-      <div className="container">
+      <div className="home-shell">
         <div className="pt-5 px-25">
           <Navbar />
         </div>

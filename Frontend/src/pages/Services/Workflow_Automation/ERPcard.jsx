@@ -45,7 +45,7 @@ function ERPcard() {
                 text-white
               "
             >
-              Lorem ipsum dolor
+              Enterprise ERP & LMS Frameworks
             </h3>
           </div>
         </div>

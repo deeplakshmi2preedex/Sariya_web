@@ -45,7 +45,7 @@ function DesignCard() {
                 text-white
               "
             >
-              Lorem ipsum dolor
+             Visual Site & Design Ecosystems
             </h3>
           </div>
         </div>

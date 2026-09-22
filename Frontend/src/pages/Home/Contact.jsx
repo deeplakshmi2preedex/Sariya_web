@@ -275,9 +275,10 @@ export default function Contact() {
                   text-[clamp(9px,2vw,16px)] font-bold text-black
                   transition-all duration-300 ease-in-out
                   hover:bg-gray-300
-                  hover:text-[clamp(8px,1.8vw,14px)]
+                  hover:text-[clamp(8px,2vw,14px)]
                   hover:font-normal
                   hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
+                   min-h-[48px]
                 "
               >
                 Send My Audit Request

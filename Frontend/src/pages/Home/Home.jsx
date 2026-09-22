@@ -11,8 +11,8 @@ import Navbar from "../../components/Navbar.jsx";
 function Home() {
   return (
     <>
-      <div className="container">
-        <div className="main-container pt-6 pl-25">
+      <div className="home-shell">
+        <div className="main-container pt-6">
           <Navbar />
 
           <main>

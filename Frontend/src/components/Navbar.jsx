@@ -29,7 +29,7 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const navLinkClass = ({ isActive }) =>
-    `text-[18px] leading-none transition duration-200 ${
+    `whitespace-nowrap text-[clamp(13px,1.25vw,18px)]  leading-none transition duration-200 ${
       isActive
         ? "text-amber-300 underline underline-offset-4"
         : "text-white/70 hover:text-amber-300"
@@ -51,7 +51,8 @@ export default function Navbar() {
               shadow-2xl
               shadow-black/20
               backdrop-blur-xl
-              w-full min-w-0
+              w-[clamp(280px,calc(100vw - 40px),1600px)]
+               min-w-0
             "
           >
             {/* ================= LOGO ================= */}
@@ -59,11 +60,12 @@ export default function Navbar() {
             <Link
               to="/"
               className="
-                text-[39px]
-                font-semibold
-                leading-none
-                tracking-[-0.04em]
-                text-white
+               shrink-0
+               text-[clamp(25px,2.7vw,39px)]
+               font-semibold
+               leading-none
+               tracking-[-0.04em]
+               text-white
               "
             >
               sariya
@@ -101,7 +103,7 @@ export default function Navbar() {
                     h-full
                     items-center
                     gap-1
-                    text-[18px]
+                    text-[clamp(13px,1.25vw,18px)]
                     leading-none
                     transition
                     duration-200

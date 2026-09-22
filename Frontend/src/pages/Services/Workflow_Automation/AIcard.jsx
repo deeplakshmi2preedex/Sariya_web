@@ -45,7 +45,7 @@ function AICard() {
                 text-white
               "
             >
-              Lorem ipsum dolor
+              Intelligent AI & API Connectivity
             </h3>
           </div>
         </div>

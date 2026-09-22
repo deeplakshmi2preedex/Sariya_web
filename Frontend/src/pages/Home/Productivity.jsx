@@ -88,11 +88,15 @@ export default function Productivity() {
   }, []);
 
   return (
-    <section className="w-full px-4 py-10 sm:px-6 md:px-8 lg:px-10">
-      
+    <section
+      className="
+        w-full
+        px-[clamp(16px,3vw,40px)]
+        py-[clamp(32px,5vw,40px)]
+      "
+    >
       {/* VIEWPORT */}
       <div className="w-full overflow-hidden rounded-[30px]">
-        
         {/* SLIDER TRACK */}
         <div
           className="flex transition-transform duration-1000 ease-in-out"
@@ -113,50 +117,47 @@ export default function Productivity() {
                 flex-shrink-0
                 items-end
                 overflow-hidden
-                rounded-[30px]
-                border
-                border-white/10
+                rounded-7xl
+                border-none
                 bg-cover
                 bg-center
-                p-5
+
+                p-[clamp(20px,3.2vw,40px)]
 
                 sm:min-h-[480px]
-                sm:p-7
-
                 md:min-h-[520px]
-                md:p-8
-
                 lg:min-h-[550px]
-                lg:p-10
-
                 xl:min-h-[600px]
               "
               style={{
                 backgroundImage: `
                   linear-gradient(
-                    0deg,
-                    rgba(0,0,0,.82),
-                    rgba(0,0,0,.08)
+                    to right,
+                    rgba(0,0,0,0.75) 0%,
+                    rgba(0,0,0,0.40) 30%,
+                    rgba(0,0,0,0.40) 70%,
+                    rgba(0,0,0,0.75) 100%
                   ),
                   url(${section.image})
                 `,
               }}
             >
               {/* CONTENT */}
-              <div className="relative z-10 w-full max-w-4xl">
+              <div
+                className="
+                  relative
+                  z-10
+                  w-full
+                  max-w-4xl
+                "
+              >
                 <h2
                   className="
                     m-0
-                    text-[32px]
+                    text-[clamp(32px,3.2vw,50px)]
                     font-bold
                     leading-[1.2]
                     tracking-[-1px]
-
-                    sm:text-[38px]
-
-                    md:text-[44px]
-
-                    lg:text-[50px]
                   "
                 >
                   {section.title}
@@ -164,17 +165,11 @@ export default function Productivity() {
 
                 <p
                   className="
-                    mt-4
+                    mt-[clamp(12px,1.2vw,16px)]
                     max-w-3xl
-                    text-[14px]
+                    text-[clamp(14px,1.1vw,17px)]
                     leading-[1.6]
                     text-[#BCC7DB]
-
-                    sm:text-[15px]
-
-                    md:text-[16px]
-
-                    lg:text-[17px]
                   "
                 >
                   {section.text}

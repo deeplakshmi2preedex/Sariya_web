@@ -8,31 +8,38 @@ export default function Hero() {
       className="
         hero-grid
         relative
-        min-h-[680px]
+        w-full
         overflow-hidden
-        pt-[108px]
-        pb-[70px]
+        pt-[clamp(70px,8vw,108px)]
+        pb-[clamp(50px,6vw,70px)]
       "
     >
-
       <div
         className="
-          container-page
+          hero-content
           relative
+          mx-auto
           grid
-          gap-12
-          lg:grid-cols-[1.05fr_.95fr]
+          w-full
+          grid-cols-1
+          gap-[clamp(40px,5vw,80px)]
+          px-[clamp(20px,4vw,60px)]
+          lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)]
         "
       >
+        {/* ================= LEFT CONTENT ================= */}
 
-        {/* LEFT CONTENT */}
-
-        <div className="max-w-[760px]">
-
+        <div
+          className="
+            min-w-0
+            w-full
+            max-w-[760px]
+          "
+        >
           <p
             className="
-              mb-[30px]
-              text-[clamp(1rem,1.2vw,1.125rem)]
+              mb-[clamp(22px,2.2vw,30px)]
+              text-[clamp(0.9rem,1.2vw,1.125rem)]
               font-bold
               leading-none
               tracking-[0.055em]
@@ -42,126 +49,112 @@ export default function Hero() {
             WE BUILD
           </p>
 
-
           <h1
             className="
-              text-[clamp(2.25rem,3.8vw,3.5rem)]
+              text-[clamp(2rem,3.8vw,3.5rem)]
               font-semibold
-              leading-[1.3]
+              leading-[1.25]
               tracking-[0.01em]
               text-white
             "
           >
             SYSTEM THAT RUNS
             <br />
-
-            YOUR{" "}
-            <span className="text-[#BC648E]">
-              {"{"}
-            </span>
+            YOUR <span className="text-[#BC648E]">{"{"}</span>
             BUSINESS
-            <span className="text-[#BC648E]">
-              {"}"}
-            </span>{" "}
-            ON
-
+            <span className="text-[#BC648E]">{"}"}</span> ON
             <br />
-
             AUTOPILOT.
           </h1>
 
-
-          {/* DESCRIPTION */}
+          {/* ================= DESCRIPTION ================= */}
 
           <p
             className="
-              mt-[36px]
+              mt-[clamp(24px,3vw,36px)]
+              w-full
               max-w-[790px]
-              text-[clamp(0.875rem,1vw,1rem)]
+              text-[clamp(0.8rem,1vw,1rem)]
               font-normal
               leading-[1.65]
               text-white
             "
           >
-            You've outgrown basic templates. We craft “out-of-the-box”
-            software that centralizes your messy workflows into one
-            high-efficiency dashboard.
+            You've outgrown basic templates. We craft “out-of-the-box” software
+            that centralizes your messy workflows into one high-efficiency
+            dashboard.
           </p>
 
-
-          {/* BUTTONS */}
+          {/* ================= BUTTONS ================= */}
 
           <div
             className="
-              mt-[30px]
+              mt-[clamp(24px,2.5vw,30px)]
               flex
               flex-wrap
-              gap-8
+              gap-[clamp(14px,2vw,32px)]
             "
           >
-
             <a
               href="#contact"
               className="
                 inline-flex
+                shrink-0
                 items-center
                 gap-2
                 rounded-[16px]
                 bg-blue-600
-                px-[34px]
-                py-[15px]
-                text-[clamp(0.875rem,1vw,1rem)]
+                px-[clamp(20px,2.5vw,34px)]
+                py-[clamp(12px,1.2vw,15px)]
+                text-[clamp(0.75rem,1vw,1rem)]
                 font-bold
                 text-white
                 shadow-lg
                 shadow-blue-900/30
-                transition
+                transition-all
+                duration-300
                 hover:bg-blue-500
               "
             >
               AUTOMATE TODAY
-
-              <ArrowUpRight size={17} />
+              <ArrowUpRight className="h-[clamp(14px,1.3vw,17px)] w-[clamp(14px,1.3vw,17px)]" />
             </a>
-
 
             <a
               href="#services"
               className="
                 inline-flex
+                shrink-0
                 items-center
                 rounded-[16px]
                 bg-white
-                px-[38px]
-                py-[15px]
-                text-[clamp(0.875rem,1vw,1rem)]
+                px-[clamp(22px,2.7vw,38px)]
+                py-[clamp(12px,1.2vw,15px)]
+                text-[clamp(0.75rem,1vw,1rem)]
                 font-bold
                 text-[#082F7B]
-                transition
+                transition-all
+                duration-300
                 hover:bg-blue-100
               "
             >
               EXPLORE MORE
             </a>
-
           </div>
-
         </div>
 
-
-        {/* ==================================================
-            RIGHT IMAGE
-            ================================================== */}
+        {/* ================= RIGHT IMAGE ================= */}
 
         <div
           className="
             relative
             hidden
-            min-h-[520px]
+            min-w-0
+            min-h-[clamp(400px,42vw,520px)]
+            w-full
             lg:block
           "
         >
-
           {/* IMAGE */}
 
           <div
@@ -169,8 +162,8 @@ export default function Hero() {
               absolute
               right-0
               top-[8px]
-              h-[415px]
-              w-[560px]
+              h-[clamp(300px,30vw,415px)]
+              w-[min(100%,560px)]
               rounded-[28px]
               bg-cover
               bg-center
@@ -180,15 +173,14 @@ export default function Hero() {
             }}
           />
 
-
           {/* CONTENT BOX */}
 
           <div
             className="
               absolute
               right-0
-              top-[448px]
-              w-[560px]
+              top-[clamp(325px,33vw,448px)]
+              w-[min(100%,560px)]
               rounded-[10px]
               bg-[#292929]
               px-4
@@ -197,7 +189,7 @@ export default function Hero() {
           >
             <p
               className="
-                text-[clamp(0.875rem,1vw,1rem)]
+                text-[clamp(0.8rem,1vw,1rem)]
                 font-normal
                 leading-[1.45]
                 text-white
@@ -207,11 +199,8 @@ export default function Hero() {
               build business solutions that think ahead.
             </p>
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

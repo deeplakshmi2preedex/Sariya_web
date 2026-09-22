@@ -2,15 +2,13 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section
-      id="contact"
-      className="border-t border-white/5 bg-black py-10 mb-12"
-    >
+    <section id="contact" className="border-t border-white/5 bg-black py-10 mb-12">
       <div className="page-width text-center">
         {/* Logo */}
         <p className="text-[clamp(25px,4vw,35px)] font-bold text-white">
           sariya<span className="text-blue-400">.</span>
         </p>
+
         {/* Heading */}
         <h2
           className="
@@ -28,27 +26,25 @@ export default function CTA() {
         >
           Contact us to discuss your project
         </h2>
-        
+
         {/* Paragraph */}
         <p
           className="
             mx-auto
             mt-4
-            max-w-[1180px]
+            w-full
             whitespace-normal
-            text-[clamp(14px,1.6vw,16px)]
+            text-[clamp(13px,1.6vw,16px)]
             font-normal
-            leading-[1.5]
-            tracking-[1.2px]
+            leading-6
+            tracking-[0.2px]
             text-[#BCC7DB]
+            lg:whitespace-nowrap
           "
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          Whether you're looking to automate a single workflow or build a custom
+          ERP, our technical auditors are ready to find your efficiency gaps.
         </p>
-
 
         {/* Button */}
         <div className="mt-7 text-center">

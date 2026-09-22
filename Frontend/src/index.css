@@ -47,7 +47,7 @@ p {
   color: #fff;
 }
 
-.container{
+.home-shell{
   background:
     radial-gradient(
     ellipse 1100px 850px at 0% 0%,
@@ -61,41 +61,52 @@ p {
   rgba(0, 0, 0, 0.42);
 
   width: 100%;
+  max-width: 100%;
   height: 100%;
   padding: 20px;
 
 }
 
 .main-container {
-  width: calc(100% - 42px);
-  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-left: 70px;
+  padding-right: 70px;
+
   border-radius: 30px;
-  border: none;
 
   background:
     radial-gradient(
-    ellipse 1100px 850px at 0% 0%,
-    rgba(105, 158, 220, 0.70) 0%,
-    rgba(82, 132, 195, 0.58) 20%,
-    rgba(55, 100, 158, 0.45) 38%,
-    rgba(30, 61, 98, 0.30) 55%,
-    rgba(10, 23, 38, 0.12) 70%,
-    transparent 92%
-  ),
-  rgba(0, 0, 0, 0.42);
+      ellipse 1100px 850px at 0% 0%,
+      rgba(105, 158, 220, 0.70) 0%,
+      rgba(82, 132, 195, 0.58) 20%,
+      rgba(55, 100, 158, 0.45) 38%,
+      rgba(30, 61, 98, 0.30) 55%,
+      rgba(10, 23, 38, 0.12) 70%,
+      transparent 92%
+    ),
+    rgba(0, 0, 0, 0.42);
 
   box-shadow:
     0 30px 90px rgba(0, 0, 0, 0.65);
 }
 
-.navbar-wrapper {
-  width:100%;
-  margin:20;
+
+.container-page {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-/* .container-page {
-  
-} */
+.navbar-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  padding-left: clamp(8px, 2vw, 32px);
+  padding-right: clamp(8px, 2vw, 32px);
+}
 
 
 .hero-grid {
@@ -137,13 +148,17 @@ p {
 /*   TABLET */
 
 @media (max-width: 1200px) {
-
-  .navbar-wrapper {
-    width: calc(100% - 80px);
+  .home-shell {
+    padding: 14px;
   }
 
-  .container-page {
-    width: calc(100% - 70px);
+  .main-container {
+    border-radius: 26px;
+  }
+
+  .navbar-wrapper {
+    padding-left: clamp(10px, 2vw, 30px);
+    padding-right: clamp(10px, 2vw, 30px);
   }
 }
 
@@ -151,7 +166,6 @@ p {
 /*  MOBILE  */
 
 @media (max-width: 768px) {
-
   body {
     background:
       radial-gradient(
@@ -163,18 +177,25 @@ p {
       #000;
   }
 
+  .home-shell {
+    width: 100%;
+    padding: 10px;
+  }
+
   .main-container {
-    width: calc(100% - 20px);
-    margin-top: 10px;
+    width: 100%;
+    margin-top: 0;
     border-radius: 24px;
   }
 
   .navbar-wrapper {
-    width: calc(100% - 32px);
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .container-page {
-    width: calc(100% - 36px);
+    width: 100%;
   }
 }
 
