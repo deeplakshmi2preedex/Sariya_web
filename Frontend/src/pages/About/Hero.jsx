@@ -5,7 +5,18 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="hero-bg relative flex min-h-[780px] items-center overflow-hidden border-b border-white/5"
+      className="
+        hero-bg
+        relative
+        flex
+        min-h-[clamp(34rem,70vw,48.75rem)]
+        w-full
+        max-w-full
+        items-center
+        overflow-hidden
+        border-b
+        border-white/5
+      "
       style={{
         backgroundImage: `url(${heroImg})`,
         backgroundSize: "cover",
@@ -13,14 +24,47 @@ export default function Hero() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* NAVBAR */}
-      <div className="absolute left-0 right-0 top-10 z-50 px-30">
+      {/* ================= NAVBAR ================= */}
+      <div
+        className="
+          absolute
+          left-0
+          right-0
+          top-[clamp(1rem,3vw,2.5rem)]
+          z-50
+          w-full
+          px-[clamp(0.75rem,4vw,7.5rem)]
+        "
+      >
         <Navbar />
       </div>
 
-      {/* HERO CONTENT */}
-      <div className="page-width relative z-10 pt-20">
-        <h1 className="hero-title max-w-4xl p-12 text-[clamp(25px,9vw,124px)] font-bold leading-none tracking-[1.2px] text-white">
+      {/* ================= HERO CONTENT ================= */}
+      <div
+        className="
+          page-width
+          relative
+          z-10
+          w-full
+          max-w-full
+          px-[clamp(0.75rem,4vw,3rem)]
+          pt-[clamp(5rem,12vw,10rem)]
+        "
+      >
+        <h1
+          className="
+            hero-title
+            w-fit
+            max-w-full
+            break-words
+            p-[clamp(0.5rem,3vw,3rem)]
+            text-[clamp(2rem,9vw,7.75rem)]
+            font-bold
+            leading-[0.9]
+            tracking-[clamp(0.01em,0.1vw,0.075em)]
+            text-white
+          "
+        >
           About Us
         </h1>
       </div>

@@ -11,9 +11,7 @@ function CustomDevelopment() {
   return (
     <>
       <div className="home-shell">
-        <div className="px-25 pt-5">
-          <Navbar />
-        </div>
+        <Navbar />
 
         <main>
           <Hero />

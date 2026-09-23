@@ -4,21 +4,46 @@ import supportCard from "../../../assets/services/supportCard.png";
 
 function AICard() {
   return (
-    <div className="rounded-3xl px-12 pb-15">
+    <div
+      className="
+        w-full
+        max-w-full
+        min-w-0
+        px-[clamp(1.5rem,4vw,3rem)]
+        pt-[clamp(1rem,2vw,1.25rem)]
+        pb-[clamp(2rem,5vw,3.75rem)]
+        min-[1025px]:px-12
+        min-[1025px]:pt-5
+        min-[1025px]:pb-15
+      "
+    >
       <article
         className="
           group
+          grid
+          w-full
+          min-w-0
           overflow-hidden
-          rounded-[17px]
-          lg:grid
-          lg:grid-cols-2
+          rounded-[clamp(1.75rem,4vw,3rem)]
+          grid-cols-1
+          min-[1025px]:grid-cols-2
         "
       >
-        {/* ================= LEFT : IMAGE ================= */}
-        <div className="relative min-h-[320px] overflow-hidden lg:min-h-[420px]">
+        {/* ================= IMAGE ================= */}
+        <div
+          className="
+            relative
+            min-h-[clamp(240px,48vw,480px)]
+            w-full
+            min-w-0
+            overflow-hidden
+            min-[1025px]:min-h-[420px]
+            min-[1025px]:order-1
+          "
+        >
           <img
             src={supportCard}
-            alt="Scalable Full-Stack Frameworks"
+            alt="Intelligent AI & API Connectivity"
             className="
               absolute
               inset-0
@@ -28,6 +53,7 @@ function AICard() {
               transition-transform
               duration-700
               ease-out
+              group-hover:scale-105
             "
           />
 
@@ -35,13 +61,25 @@ function AICard() {
           <div className="absolute inset-0 bg-black/30" />
 
           {/* Image Text */}
-          <div className="absolute inset-0 flex items-center justify-center px-6">
+          <div
+            className="
+              absolute
+              inset-0
+              flex
+              items-center
+              justify-center
+              px-[clamp(1rem,4vw,2rem)]
+            "
+          >
             <h3
               className="
+                w-full
+                max-w-full
+                break-words
                 text-center
-                text-[clamp(18px,2vw,23.3597px)]
+                text-[clamp(1.125rem,2.8vw,1.46rem)]
                 font-semibold
-                leading-tight
+                leading-[1.2]
                 text-white
               "
             >
@@ -50,28 +88,32 @@ function AICard() {
           </div>
         </div>
 
-        {/* ================= RIGHT : CONTENT ================= */}
+        {/* ================= CONTENT ================= */}
         <div
           className="
             flex
-            min-h-[320px]
+            min-h-[clamp(360px,52vw,480px)]
+            w-full
+            min-w-0
             flex-col
-            justify-between
             bg-[#C3795E]
-            p-10
-            sm:p-10
-            lg:min-h-[420px]
-            lg:p-14
+            p-[clamp(1.5rem,5vw,3.5rem)]
+            min-[1025px]:min-h-[420px]
+            min-[1025px]:p-14
+            min-[1025px]:order-2
           "
         >
-          <div>
+          <div className="w-full min-w-0">
             {/* Heading */}
             <h2
               className="
-                text-[clamp(18px,4vw,37.3754px)]
+                w-full
+                max-w-full
+                break-words
+                text-[clamp(1.125rem,2.8vw,2.336rem)]
                 font-semibold
                 leading-[1.1]
-                tracking-[-0.8px]
+                tracking-[clamp(-0.02em,-0.04vw,-0.05em)]
                 text-white
               "
             >
@@ -81,9 +123,12 @@ function AICard() {
             {/* Paragraph */}
             <p
               className="
-                mt-4
-                max-w-[500px]
-                text-[clamp(14px,2vw,16px)]
+                mt-[clamp(0.75rem,1.5vw,1rem)]
+                w-full
+                max-w-[31.25rem]
+                break-words
+                text-[clamp(0.875rem,1.25vw,1rem)]
+                font-light
                 leading-[1.6]
                 text-[#F0F0F0]
               "
@@ -95,26 +140,35 @@ function AICard() {
             {/* ================= BULLETS ================= */}
             <ul
               className="
-                mt-6
+                mt-[clamp(1rem,2vw,1.5rem)]
                 grid
+                w-full
+                min-w-0
                 grid-cols-1
-                gap-x-8
-                gap-y-5
-                text-[clamp(14px,2vw,16px)]
+                gap-x-[clamp(1rem,2.5vw,2rem)]
+                gap-y-[clamp(0.75rem,1.5vw,1.25rem)]
+                text-[clamp(0.875rem,1.25vw,1rem)]
                 leading-[1.5]
                 text-white
-                lg:grid-cols-2
+                min-[500px]:grid-cols-2
               "
             >
-              {/* React */}
-              <li className="relative pl-4">
+              {/* AI Development */}
+              <li
+                className="
+                  relative
+                  min-w-0
+                  break-words
+                  pl-[clamp(0.75rem,1.2vw,1rem)]
+                "
+              >
                 <span
                   className="
                     absolute
                     left-0
-                    top-[7px]
-                    h-[4px]
-                    w-[4px]
+                    top-[0.55em]
+                    h-[clamp(3px,0.3vw,4px)]
+                    w-[clamp(3px,0.3vw,4px)]
                     rounded-full
                     bg-white
                   "
@@ -123,70 +177,103 @@ function AICard() {
                 <span className="font-semibold">AI Development:</span>
               </li>
 
-              {/* React Description */}
-              <li className="relative pl-4">
+              {/* AI Development Description */}
+              <li
+                className="
+                  relative
+                  min-w-0
+                  break-words
+                  pl-[clamp(0.75rem,1.2vw,1rem)]
+                "
+              >
                 <span
                   className="
                     absolute
                     left-0
-                    top-[7px]
-                    h-[4px]
-                    w-[4px]
+                    top-[0.55em]
+                    h-[clamp(3px,0.3vw,4px)]
+                    w-[clamp(3px,0.3vw,4px)]
                     rounded-full
                     bg-white
                   "
                 />
-                Custom LLM implementations and smart automation bots.
+
+                <span>
+                  Custom LLM implementations and smart automation bots.
+                </span>
               </li>
 
-              {/* Node */}
-              <li className="relative pl-4">
+              {/* API Integration */}
+              <li
+                className="
+                  relative
+                  min-w-0
+                  break-words
+                  pl-[clamp(0.75rem,1.2vw,1rem)]
+                "
+              >
                 <span
                   className="
                     absolute
                     left-0
-                    top-[7px]
-                    h-[4px]
-                    w-[4px]
+                    top-[0.55em]
+                    h-[clamp(3px,0.3vw,4px)]
+                    w-[clamp(3px,0.3vw,4px)]
                     rounded-full
                     bg-white
                   "
                 />
-                <span className="font-semibold"></span>API Integration:
+
+                <span className="font-semibold">API Integration:</span>
               </li>
 
-              {/* Node Description */}
-              <li className="relative pl-4">
+              {/* API Integration Description */}
+              <li
+                className="
+                  relative
+                  min-w-0
+                  break-words
+                  pl-[clamp(0.75rem,1.2vw,1rem)]
+                "
+              >
                 <span
                   className="
                     absolute
                     left-0
-                    top-[7px]
-                    h-[4px]
-                    w-[4px]
+                    top-[0.55em]
+                    h-[clamp(3px,0.3vw,4px)]
+                    w-[clamp(3px,0.3vw,4px)]
                     rounded-full
                     bg-white
                   "
                 />
-                Connecting CRM, Billing, and Email into a single flow.
+
+                <span>
+                  Connecting CRM, Billing, and Email into a single flow.
+                </span>
               </li>
             </ul>
           </div>
 
           {/* ================= BUTTON ================= */}
-          <div className="mt-8">
+          <div className="mt-auto pt-[clamp(1.5rem,3vw,2rem)]">
             <Link
               to="/contact"
               className="
                 inline-flex
+                max-w-full
+                shrink-0
                 items-center
-                gap-3
-                rounded-2xl
+                justify-center
+                gap-[clamp(0.375rem,0.7vw,0.75rem)]
+                rounded-[clamp(0.75rem,1.5vw,1rem)]
                 bg-white
-                px-6
-                py-3
-                text-[clamp(12px,2vw,16px)]
+                px-[clamp(1rem,2.5vw,1.5rem)]
+                py-[clamp(0.625rem,1.2vw,0.75rem)]
+                text-[clamp(0.75rem,1.2vw,1rem)]
                 font-semibold
+                leading-none
+                whitespace-nowrap
                 text-black
                 transition-all
                 duration-300
@@ -195,11 +282,14 @@ function AICard() {
                 active:scale-95
               "
             >
-              Automate Now
+              <span>Automate Now</span>
+
               <ArrowUpRight
-                size={15}
                 strokeWidth={2.5}
                 className="
+                  h-[clamp(0.8rem,1.3vw,0.9375rem)]
+                  w-[clamp(0.8rem,1.3vw,0.9375rem)]
+                  shrink-0
                   transition-transform
                   duration-300
                   group-hover:translate-x-0.5

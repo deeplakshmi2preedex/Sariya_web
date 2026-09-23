@@ -48,17 +48,21 @@ export default function Problems() {
         <div className="text-center">
           <h2
             className="
-              mx-auto
-              max-w-[1000px]
-              text-[clamp(2rem,4.2vw,3.75rem)]
-              font-semibold
-              leading-[1.2]
-              tracking-[-0.02em]
-              text-[#BCC7DB]
-            "
+    mx-auto
+    max-w-[1000px]
+    text-[clamp(1.375rem,4.2vw,3.75rem)]
+    font-semibold
+    leading-[1.2]
+    tracking-[-0.02em]
+    text-[#BCC7DB]
+    max-[1025px]:text-white
+  "
           >
             When "Ready-Made"{" "}
-            <span className="text-white">Isn't Enough</span>
+            <span className="text-white">
+              Isn't
+              <br className="min-[1025px]:hidden" /> Enough
+            </span>
           </h2>
 
           <p
@@ -73,9 +77,7 @@ export default function Problems() {
             "
           >
             Matching tells your story, but development solves your problems.{" "}
-            <span className="text-white">
-              If you're feeling these pains,
-            </span>{" "}
+            <span className="text-white">If you're feeling these pains,</span>{" "}
             you need a custom solution.
           </p>
         </div>
@@ -137,7 +139,7 @@ export default function Problems() {
 
               <h3
                 className="
-                  text-[clamp(1.15rem,1.8vw,1.5rem)]
+                  text-[clamp(1.125rem,1.8vw,1.5rem)]
                   font-medium
                   leading-[1.2]
                   text-white
@@ -152,7 +154,7 @@ export default function Problems() {
                 className="
                   mt-[clamp(10px,1vw,12px)]
                   max-w-[480px]
-                  text-[clamp(0.8125rem,0.9vw,0.9375rem)]
+                  text-[clamp(0.875rem,0.9vw,0.9375rem)]
                   font-normal
                   leading-[1.6]
                   text-white/45

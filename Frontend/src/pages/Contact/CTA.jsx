@@ -96,7 +96,16 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="contact-background px-5 pt-43 pb-18 md:px-8"
+      className="
+        contact-background
+        relative
+        min-h-screen
+        w-full
+        overflow-hidden
+        px-[clamp(0.75rem,4vw,2rem)]
+        pt-[clamp(8rem,14vw,10.75rem)]
+        pb-[clamp(2rem,5vw,4.5rem)]
+      "
       style={{
         backgroundImage: `url(${contactImg})`,
         backgroundSize: "cover",
@@ -104,20 +113,144 @@ export default function ContactSection() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* NAVBAR */}
-      <div className="absolute left-0 right-0 top-10 z-50 px-30">
+      {/* ================= NAVBAR ================= */}
+      <div
+        className="
+          absolute
+          left-0
+          right-0
+          top-[clamp(1rem,3vw,2.5rem)]
+          z-50
+          w-full
+          px-[clamp(0.75rem,4vw,7.5rem)]
+        "
+      >
         <Navbar />
       </div>
 
-      {/* CONTACT CARD */}
-      <div className="contact-card mx-auto grid w-full max-w-[975px] gap-5 rounded-[27px] bg-white p-5 text-[#1C1C1C] md:grid-cols-2 ">
+      {/* ================= CONTACT CARD ================= */}
+      <div
+        className="
+          contact-card
+          mx-auto
+          grid
+          w-full
+          max-w-[975px]
+          min-w-0
+          grid-cols-1
+          gap-[clamp(1rem,2vw,1.25rem)]
+          rounded-[clamp(1.25rem,3vw,1.6875rem)]
+          bg-white
+          p-[clamp(0.75rem,2vw,1.25rem)]
+          text-[#1C1C1C]
+          md:grid-cols-2
+        "
+      >
+        {/* ================= IMAGE ================= */}
+        <div
+          className="
+            relative
+            order-1
+            min-h-[clamp(22rem,65vw,39.0625rem)]
+            w-full
+            min-w-0
+            overflow-hidden
+            rounded-[clamp(1rem,2.5vw,1.375rem)]
+            md:order-2
+          "
+        >
+          <img
+            src={contactImg}
+            alt="Horse and rider standing on a rug in a desert landscape"
+            className="
+              absolute
+              inset-0
+              h-full
+              w-full
+              object-cover
+            "
+          />
+
+          <div className="absolute inset-0 bg-black/10" />
+
+          <div
+            className="
+              absolute
+              bottom-[clamp(1.5rem,4vw,2.5rem)]
+              left-0
+              right-0
+              flex
+              flex-col
+              items-center
+              justify-center
+              gap-[clamp(0.5rem,2vw,2.5rem)]
+              px-[clamp(1rem,3vw,2.5rem)]
+              text-center
+              text-[clamp(0.6875rem,1.3vw,0.8125rem)]
+              text-white
+              sm:flex-row
+              sm:justify-between
+            "
+          >
+            <a
+              href="tel:+918826418355"
+              className="
+                max-w-full
+                break-all
+                drop-shadow-md
+                transition
+                hover:opacity-80
+              "
+            >
+              +91-8826418355
+            </a>
+
+            <a
+              href="mailto:care@sariyadesigns.com"
+              className="
+                max-w-full
+                break-all
+                drop-shadow-md
+                transition
+                hover:opacity-80
+              "
+            >
+              care@sariyadesigns.com
+            </a>
+          </div>
+        </div>
+
         {/* ================= FORM ================= */}
-        <div className="px-5 pt-5 md:px-12 md:py-6">
-          <h1 className="text-center text-[clamp(22px,4vw,40px)] font-normal text-[#1C1C1C]">
+        <div
+          className="
+            order-2
+            min-w-0
+            px-[clamp(0.5rem,2vw,3rem)]
+            pt-[clamp(0.75rem,2vw,1.5rem)]
+            pb-[clamp(1rem,2vw,1.5rem)]
+            md:order-1
+          "
+        >
+          <h1
+            className="
+              w-full
+              text-center
+              font-normal
+              leading-[1.1]
+              text-[#1C1C1C]
+              text-[clamp(1.5rem,4vw,2.5rem)]
+            "
+          >
             Get In Touch
           </h1>
 
-          <form onSubmit={handleSubmit} className="mt-7 space-y-5">
+          <form
+            onSubmit={handleSubmit}
+            className="
+              mt-[clamp(1.5rem,3vw,1.75rem)]
+              space-y-[clamp(1rem,2vw,1.25rem)]
+            "
+          >
             {/* FIRST NAME */}
             <Field
               label="First name"
@@ -153,28 +286,59 @@ export default function ContactSection() {
             <div>
               <label
                 htmlFor="phone"
-                className="mb-2 block text-[clamp(15px,2vw,20px)] text-[#1C1C1C]"
+                className="
+                  mb-2
+                  block
+                  text-[#1C1C1C]
+                  text-[clamp(0.9375rem,2vw,1.25rem)]
+                "
               >
                 Phone
               </label>
 
               <div className="relative">
                 <div
-                  className={`flex h-[47px] w-full overflow-hidden rounded-2xl border bg-transparent text-[#1C1C1C] transition-colors ${
-                    errors.phone
-                      ? "border-red-500"
-                      : "border-gray-300 focus-within:border-gray-500"
-                  }`}
+                  className={`
+                    flex
+                    h-[clamp(2.75rem,5vw,2.9375rem)]
+                    w-full
+                    min-w-0
+                    overflow-hidden
+                    rounded-2xl
+                    border
+                    bg-transparent
+                    text-[#1C1C1C]
+                    transition-colors
+                    ${
+                      errors.phone
+                        ? "border-red-500"
+                        : "border-gray-300 focus-within:border-gray-500"
+                    }
+                  `}
                 >
                   {/* COUNTRY SELECT */}
                   <button
                     type="button"
                     onClick={() => setShowCountries(!showCountries)}
-                    className="flex shrink-0 items-center gap-2 border-r border-gray-300 px-3 text-[clamp(12px,1.5vw,16px)] text-[#1C1C1C] transition hover:bg-gray-50"
+                    className="
+                      flex
+                      shrink-0
+                      items-center
+                      gap-[clamp(0.3rem,1vw,0.5rem)]
+                      border-r
+                      border-gray-300
+                      px-[clamp(0.5rem,1.5vw,0.75rem)]
+                      text-[#1C1C1C]
+                      transition
+                      hover:bg-gray-50
+                    "
                   >
-                    {/* FLAG ICON */}
                     <span
-                      className={`fi fi-${selectedCountry.flag}`}
+                      className={`
+                        fi
+                        fi-${selectedCountry.flag}
+                        shrink-0
+                      `}
                       style={{
                         width: "20px",
                         height: "15px",
@@ -182,13 +346,18 @@ export default function ContactSection() {
                       }}
                     />
 
-                    {/* COUNTRY CODE */}
-                    <span className="text-[#1C1C1C]">
+                    <span
+                      className="
+                        whitespace-nowrap
+                        text-[clamp(0.75rem,1.5vw,1rem)]
+                      "
+                    >
                       {selectedCountry.code}
                     </span>
 
-                    {/* ARROW */}
-                    <span className="ml-1 text-[10px] text-[#1C1C1C]">▼</span>
+                    <span className="ml-0.5 text-[9px] text-[#1C1C1C]">
+                      ▼
+                    </span>
                   </button>
 
                   {/* PHONE INPUT */}
@@ -199,53 +368,109 @@ export default function ContactSection() {
                     value={form.phone}
                     onChange={handleChange}
                     placeholder="Phone number"
-                    className="h-full min-w-0 flex-1 border-0 bg-transparent px-3 text-[clamp(15px,2vw,20px)] text-[#1C1C1C] outline-none placeholder:text-gray-400 focus:ring-0"
+                    className="
+                      h-full
+                      min-w-0
+                      flex-1
+                      border-0
+                      bg-transparent
+                      px-[clamp(0.5rem,1.5vw,0.75rem)]
+                      text-[#1C1C1C]
+                      outline-none
+                      placeholder:text-gray-400
+                      focus:ring-0
+                      text-[clamp(0.9375rem,2vw,1.25rem)]
+                    "
                   />
                 </div>
 
                 {/* COUNTRY DROPDOWN */}
                 {showCountries && (
-                  <div className="absolute left-0 top-[53px] z-50 max-h-[250px] w-[260px] overflow-y-auto rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+                  <div
+                    className="
+                      absolute
+                      left-0
+                      top-[calc(100%+0.375rem)]
+                      z-50
+                      max-h-[clamp(12rem,40vw,15.625rem)]
+                      w-[min(260px,85vw)]
+                      overflow-y-auto
+                      rounded-lg
+                      border
+                      border-gray-200
+                      bg-white
+                      py-1
+                      shadow-lg
+                    "
+                  >
                     {countries.map((country) => (
                       <button
                         key={`${country.name}-${country.code}`}
                         type="button"
                         onClick={() => selectCountry(country)}
-                        className="flex w-full items-center gap-3 px-3 py-2.5 text-left text-[13px] text-[#1C1C1C] transition hover:bg-gray-100"
+                        className="
+                          flex
+                          w-full
+                          min-w-0
+                          items-center
+                          gap-3
+                          px-3
+                          py-2.5
+                          text-left
+                          text-[13px]
+                          text-[#1C1C1C]
+                          transition
+                          hover:bg-gray-100
+                        "
                       >
-                        {/* COUNTRY FLAG */}
                         <span
-                          className={`fi fi-${country.flag}`}
+                          className={`
+                            fi
+                            fi-${country.flag}
+                            shrink-0
+                          `}
                           style={{
                             width: "22px",
                             height: "16px",
                             display: "inline-block",
-                            flexShrink: 0,
                           }}
                         />
 
-                        {/* COUNTRY NAME */}
-                        <span className="flex-1 text-[#1C1C1C]">
+                        <span
+                          className="
+                            min-w-0
+                            flex-1
+                            break-words
+                            text-[#1C1C1C]
+                          "
+                        >
                           {country.name}
                         </span>
 
-                        {/* PHONE CODE */}
-                        <span className="text-[#1C1C1C]">{country.code}</span>
+                        <span className="shrink-0 text-[#1C1C1C]">
+                          {country.code}
+                        </span>
                       </button>
                     ))}
                   </div>
                 )}
 
-                {/* PHONE ERROR */}
-                {errors.phone && <ErrorMessage text={errors.phone} />}
+                {errors.phone && (
+                  <ErrorMessage text={errors.phone} />
+                )}
               </div>
             </div>
 
-            {/* MESSAGE */}
+            {/* ================= MESSAGE ================= */}
             <div>
               <label
                 htmlFor="message"
-                className="mb-2 block text-[clamp(15px,2vw,20px)] text-[#1C1C1C]"
+                className="
+                  mb-2
+                  block
+                  text-[#1C1C1C]
+                  text-[clamp(0.9375rem,2vw,1.25rem)]
+                "
               >
                 Message *
               </label>
@@ -257,22 +482,55 @@ export default function ContactSection() {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Message"
-                  className={`min-h-[100px] w-full resize-none rounded-2xl border bg-transparent px-3 py-3 text-[clamp(15px,2vw,20px)] text-[#1C1C1C] outline-none placeholder:text-gray-400 ${
-                    errors.message
-                      ? "border-red-500"
-                      : "border-gray-300 focus:border-gray-500"
-                  }`}
+                  className={`
+                    min-h-[clamp(6rem,15vw,7rem)]
+                    w-full
+                    resize-none
+                    rounded-2xl
+                    border
+                    bg-transparent
+                    px-3
+                    py-3
+                    text-[#1C1C1C]
+                    outline-none
+                    placeholder:text-gray-400
+                    text-[clamp(0.9375rem,2vw,1.25rem)]
+                    ${
+                      errors.message
+                        ? "border-red-500"
+                        : "border-gray-300 focus:border-gray-500"
+                    }
+                  `}
                 />
 
-                {errors.message && <ErrorMessage text={errors.message} />}
+                {errors.message && (
+                  <ErrorMessage text={errors.message} />
+                )}
               </div>
             </div>
 
-            {/* SUBMIT */}
-            <div className="flex justify-center">
+            {/* ================= SUBMIT BUTTON ================= */}
+            <div className="w-full">
               <button
                 type="submit"
-                className="inline-flex w-[180px] items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-[clamp(14px,2vw,16px)] font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
+                className="
+                  flex
+                  h-[clamp(2.75rem,5vw,2.9375rem)]
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-blue-600
+                  px-4
+                  font-semibold
+                  text-white
+                  text-[clamp(0.875rem,2vw,1rem)]
+                  transition-all
+                  duration-300
+                  hover:bg-blue-700
+                  hover:shadow-lg
+                  active:scale-[0.99]
+                "
               >
                 Submit
               </button>
@@ -286,39 +544,12 @@ export default function ContactSection() {
             )}
           </form>
         </div>
-
-        {/* ================= IMAGE ================= */}
-        <div className="relative min-h-[560px] overflow-hidden rounded-[22px] md:min-h-[625px]">
-          <img
-            src={contactImg}
-            alt="Horse and rider standing on a rug in a desert landscape"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-black/10" />
-
-          <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-10 px-5 text-[13px] text-white md:justify-between md:px-10">
-            <a
-              href="tel:+918826418355"
-              className="drop-shadow-md transition hover:opacity-80"
-            >
-              +91-8826418355
-            </a>
-
-            <a
-              href="mailto:care@sariyadesigns.com"
-              className="drop-shadow-md transition hover:opacity-80"
-            >
-              care@sariyadesigns.com
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
 }
 
-/* ================= FIELD ================= */
+/* ================= REUSABLE FIELD ================= */
 
 function Field({
   label,
@@ -330,10 +561,15 @@ function Field({
   error,
 }) {
   return (
-    <div>
+    <div className="min-w-0">
       <label
         htmlFor={name}
-        className="mb-2 block text-[clamp(15px,2vw,20px)] text-[#1C1C1C]"
+        className="
+          mb-2
+          block
+          text-[#1C1C1C]
+          text-[clamp(0.9375rem,2vw,1.25rem)]
+        "
       >
         {label}
       </label>
@@ -346,11 +582,25 @@ function Field({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className={`h-[47px] w-full rounded-2xl border bg-transparent px-3 text-[clamp(15px,2vw,20px)] text-[#1C1C1C] outline-none placeholder:text-gray-400 transition-colors ${
-            error
-              ? "border-red-500 pr-10"
-              : "border-gray-300 focus:border-gray-500"
-          }`}
+          className={`
+            h-[clamp(2.75rem,5vw,2.9375rem)]
+            w-full
+            min-w-0
+            rounded-2xl
+            border
+            bg-transparent
+            px-3
+            text-[#1C1C1C]
+            outline-none
+            placeholder:text-gray-400
+            transition-colors
+            text-[clamp(0.9375rem,2vw,1.25rem)]
+            ${
+              error
+                ? "border-red-500 pr-10"
+                : "border-gray-300 focus:border-gray-500"
+            }
+          `}
         />
 
         {error && <ErrorMessage text={error} />}
@@ -364,7 +614,22 @@ function Field({
 function ErrorMessage({ text }) {
   return (
     <div className="mt-1 flex items-center gap-1.5 text-[11px] text-red-500">
-      <span className="flex h-[15px] w-[15px] items-center justify-center rounded-full border border-red-500 text-[10px] font-bold leading-none">
+      <span
+        className="
+          flex
+          h-[15px]
+          w-[15px]
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-red-500
+          text-[10px]
+          font-bold
+          leading-none
+        "
+      >
         !
       </span>
 

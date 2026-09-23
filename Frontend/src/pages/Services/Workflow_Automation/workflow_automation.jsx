@@ -9,10 +9,7 @@ function Workflow_automation() {
   return (
     <>
       <div className="home-shell">
-        <div className="pt-5 px-25">
-          <Navbar />
-        </div>
-
+        <Navbar />
         <main>
           <Hero />
         </main>

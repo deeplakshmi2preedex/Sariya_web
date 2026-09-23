@@ -27,70 +27,113 @@ export default function FAQs() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section id="faq" className="bg-black px-5 py-10 md:px-8 md:py-18">
-      <div className="mx-21">
-        {/* FAQ LIST */}
-        <div className="flex flex-col gap-5">
+    <section
+      id="faq"
+      className="
+        w-full
+        overflow-hidden
+        bg-black
+        px-[clamp(1rem,4vw,3rem)]
+        py-[clamp(2.5rem,6vw,5rem)]
+      "
+    >
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-[100rem]
+        "
+      >
+        <div
+          className="
+            flex
+            w-full
+            flex-col
+            gap-[clamp(0.75rem,1.5vw,1.25rem)]
+          "
+        >
           {questions.map((question, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div key={question} className="flex flex-col gap-0">
-                {/* QUESTION BOX */}
+              <div key={question} className="w-full min-w-0">
                 <button
                   type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onClick={() =>
+                    setOpenIndex(isOpen ? null : index)
+                  }
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                   className={`
                     group
                     flex
                     w-full
+                    min-w-0
                     items-center
-                    gap-4
-                    rounded-2xl
-                    bg-[#1C1C1C]
-                    px-5
-                    py-5
+                    rounded-[clamp(0.875rem,2vw,1rem)]
+                    px-[clamp(1rem,2.5vw,1.5rem)]
+                    py-[clamp(1rem,2.5vw,1.5rem)]
                     text-left
-                    text-[clamp(18px,4vw,25px)]
+                    text-[clamp(1rem,2.5vw,1.5625rem)]
+                    font-normal
+                    leading-[1.3]
                     text-white
                     transition-all
                     duration-300
                     ease-out
-                    hover:bg-[#F57A7A]
-                    md:px-6
-                    md:py-6
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-[#F57A7A]/50
+
+                    ${
+                      isOpen
+                        ? "bg-[#F57A7A]"
+                        : "bg-[#1C1C1C] hover:bg-[#F57A7A]"
+                    }
                   `}
                 >
                   {/* PLUS / MINUS */}
                   <span
                     className="
+                      mr-[clamp(0.75rem,2vw,1rem)]
                       flex
-                      h-6
-                      w-6
+                      h-[clamp(1.5rem,3vw,1.75rem)]
+                      w-[clamp(1.5rem,3vw,1.75rem)]
                       shrink-0
                       items-center
                       justify-center
-                      text-xl
+                      text-[clamp(1.25rem,2.5vw,1.5rem)]
+                      font-light
                       leading-none
                       transition-transform
                       duration-300
                     "
+                    aria-hidden="true"
                   >
                     {isOpen ? "−" : "+"}
                   </span>
 
                   {/* QUESTION */}
-                  <span>{question}</span>
+                  <span
+                    className="
+                      min-w-0
+                      flex-1
+                      break-words
+                    "
+                  >
+                    {question}
+                  </span>
                 </button>
 
-                {/* ANSWER BOX */}
+                {/* ANSWER */}
                 <div
+                  id={`faq-answer-${index}`}
                   className={`
                     grid
-                    transition-all
-                    duration-300
-                    ease-out
+                    w-full
+                    transition-[grid-template-rows,opacity]
+                    duration-500
+                    ease-in-out
                     ${
                       isOpen
                         ? "grid-rows-[1fr] opacity-100"
@@ -101,21 +144,23 @@ export default function FAQs() {
                   <div className="min-h-0 overflow-hidden">
                     <div
                       className="
-                        rounded-2xl
+                        mt-[clamp(0.5rem,1vw,0.75rem)]
+                        w-full
+                        rounded-[clamp(0.875rem,2vw,1rem)]
                         border
                         border-gray-700
                         bg-black
-                        px-5
-                        py-5
+                        px-[clamp(1rem,2.5vw,1.5rem)]
+                        py-[clamp(1rem,2.5vw,1.5rem)]
                         shadow-[0_0_20px_rgba(128,128,128,0.15)]
-                        md:px-6
-                        md:py-6
                       "
                     >
                       <p
                         className="
-                          text-[clamp(14px,2vw,16px)]
-                          leading-6
+                          w-full
+                          break-words
+                          text-[clamp(0.8125rem,1.4vw,1rem)]
+                          leading-[1.65]
                           text-[#BCC7DB]
                         "
                       >

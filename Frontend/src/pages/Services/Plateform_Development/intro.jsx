@@ -1,30 +1,52 @@
 function Intro() {
   return (
-    <section className="bg-black pb-20">
-      <div className="text-center">
+    <section
+      className="
+        w-full
+        max-w-full
+        bg-black
+        pb-[clamp(2.5rem,6vw,5rem)]
+      "
+    >
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-full
+          px-[clamp(1rem,4vw,2rem)]
+          text-center
+        "
+      >
+        {/* Heading */}
         <h2
           className="
-            text-[clamp(20px,4vw,40px)]
+            mx-auto
+            w-full
+            max-w-full
+            break-words
+            text-[clamp(1.25rem,4vw,2.5rem)]
             font-semibold
-            leading-tight
-            tracking-[0.8px]
+            leading-[clamp(1.15,1.2vw,1.25)]
+            tracking-[clamp(0.02em,0.08vw,0.05em)]
             text-[#C2C2C2]
           "
         >
           Sariya Systems on Autopilot
         </h2>
 
+        {/* Description */}
         <p
           className="
             mx-auto
-            max-w-[700px]
-            px-5
-            text-[clamp(14px,2vw,16px)]
+            mt-[clamp(0.75rem,1.5vw,1rem)]
+            w-full
+            max-w-[clamp(20rem,55vw,43.75rem)]
+            break-words
+            text-[clamp(0.875rem,1.5vw,1rem)]
             font-light
-            leading-[1.45]
-            tracking-[1px]
+            leading-[clamp(1.4,1.8vw,1.625)]
+            tracking-[clamp(0.02em,0.06vw,0.0625em)]
             text-[#BCC7DB]
-            mt-3
           "
         >
           Management consulting-grade technical solutions for businesses that

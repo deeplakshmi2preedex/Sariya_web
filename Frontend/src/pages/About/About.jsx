@@ -1,4 +1,3 @@
-
 import Hero from "./Hero.jsx";
 import IntroSection from "./intro.jsx";
 import SariyaStandard from "./standards.jsx";
@@ -8,8 +7,7 @@ function About() {
   return (
     <div>
       <>
-        <div> 
-          
+        <div>
           <main>
             <Hero />
           </main>

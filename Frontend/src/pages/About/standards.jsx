@@ -29,43 +29,98 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="pt-22">
-      <div className="container-page">
-
+    <section
+      className="
+        w-full
+        overflow-hidden
+        pt-[clamp(3rem,7vw,5.5rem)]
+        pb-[clamp(3rem,7vw,5rem)]
+      "
+    >
+      <div
+        className="
+          container-page
+          mx-auto
+          w-full
+          max-w-full
+          px-[clamp(1rem,4vw,2.5rem)]
+        "
+      >
         {/* ================= HEADING ================= */}
-        <div className="text-center">
-          <h2 className="text-[clamp(30px,4.5vw,50px)] font-semibold text-[#ffffff]">
+        <div className="w-full text-center">
+          <h2
+            className="
+              mx-auto
+              max-w-full
+              font-semibold
+              leading-[1.1]
+              tracking-[clamp(0.01em,0.04vw,0.02em)]
+              text-white
+              text-[clamp(1.75rem,4.5vw,3.125rem)]
+            "
+          >
             The Sariya Standard
           </h2>
         </div>
 
         {/* ================= CARDS ================= */}
-        <div className="mt-5 grid gap-6 p-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className="
+            mt-[clamp(2rem,4vw,2.5rem)]
+            grid
+            w-full
+            min-w-0
+            grid-cols-1
+            gap-[clamp(1rem,2vw,1.5rem)]
+            sm:grid-cols-2
+            lg:grid-cols-4
+          "
+        >
           {steps.map(({ icon: Icon, title, text, color }) => (
             <article
               key={title}
               className="
-                min-h-[300px]
-                min-w-[230px]
-                rounded-4xl
+                group
+                flex
+                min-w-0
+                w-full
+                min-h-[clamp(16rem,28vw,18.75rem)]
+                flex-col
+                overflow-hidden
+                rounded-[clamp(1.5rem,3vw,2rem)]
                 border
                 border-gray-500/30
                 bg-black
-                p-5
+                p-[clamp(1.25rem,2.5vw,1.5rem)]
                 shadow-[0_0_15px_rgba(156,163,175,0.15)]
                 transition-all
                 duration-500
                 ease-out
-                hover:-translate-y-2
-                hover:bg-gray-800
+                hover:-translate-y-[clamp(0.25rem,0.6vw,0.5rem)]
                 hover:border-gray-400/40
+                hover:bg-gray-800
                 hover:shadow-[0_10px_30px_rgba(156,163,175,0.25)]
               "
             >
               {/* ================= ICON ================= */}
-              <div className="mt-2">
+              <div
+                className="
+                  flex
+                  h-[clamp(2.5rem,4vw,2.75rem)]
+                  w-[clamp(2.5rem,4vw,2.75rem)]
+                  shrink-0
+                  items-center
+                  justify-center
+                "
+              >
                 <Icon
-                  size={42}
+                  className="
+                    h-full
+                    w-full
+                    transition-transform
+                    duration-500
+                    group-hover:scale-110
+                  "
                   strokeWidth={1.8}
                   style={{ color }}
                 />
@@ -74,10 +129,13 @@ export default function Process() {
               {/* ================= TITLE ================= */}
               <h3
                 className="
-                  mt-5
-                  text-[clamp(15px,4.2vw,30px)]
+                  mt-[clamp(1.25rem,2.5vw,1.5rem)]
+                  min-w-0
+                  break-words
                   font-normal
+                  leading-[1.2]
                   text-white
+                  text-[clamp(1.125rem,1.8vw,1.875rem)]
                 "
               >
                 {title}
@@ -86,11 +144,13 @@ export default function Process() {
               {/* ================= DESCRIPTION ================= */}
               <p
                 className="
-                  mt-5
-                  text-[clamp(10px,4vw,16px)]
+                  mt-[clamp(1rem,2vw,1.25rem)]
+                  min-w-0
+                  break-words
+                  text-[clamp(0.8125rem,1.1vw,1rem)]
                   font-normal
-                  leading-[1.7]
-                  tracking-[1.2px]
+                  leading-[1.65]
+                  tracking-[clamp(0.02em,0.08vw,0.075em)]
                   text-[#6C7280]
                 "
               >
@@ -99,7 +159,6 @@ export default function Process() {
             </article>
           ))}
         </div>
-
       </div>
     </section>
   );

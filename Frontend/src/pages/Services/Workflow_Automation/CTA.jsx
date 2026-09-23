@@ -2,10 +2,38 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section id="contact" className="border-t border-white/5 bg-black py-10 mb-12">
-      <div className="page-width text-center">
+    <section
+      id="contact"
+      className="
+        w-full
+        max-w-full
+        border-t
+        border-white/5
+        bg-black
+        py-[clamp(2.5rem,6vw,4rem)]
+        mb-[clamp(2rem,5vw,3rem)]
+      "
+    >
+      <div
+        className="
+          page-width
+          w-full
+          max-w-full
+          px-[clamp(1rem,4vw,3rem)]
+          text-center
+        "
+      >
         {/* Logo */}
-        <p className="text-[clamp(25px,4vw,35px)] font-bold text-white">
+        <p
+          className="
+            w-full
+            max-w-full
+            text-[clamp(1.5625rem,4vw,2.1875rem)]
+            font-bold
+            leading-none
+            text-white
+          "
+        >
           sariya<span className="text-blue-400">.</span>
         </p>
 
@@ -13,33 +41,35 @@ export default function CTA() {
         <h2
           className="
             mx-auto
-            mt-20
+            mt-[clamp(3rem,8vw,5rem)]
             w-full
-            whitespace-normal
-            text-[clamp(22px,4vw,40px)]
+            max-w-full
+            break-words
+            text-[clamp(1.25rem,4vw,2.5rem)]
             font-semibold
-            leading-tight
-            tracking-[1.5px]
+            leading-[1.2]
+            tracking-[clamp(0.02em,0.1vw,0.094em)]
             text-white
-            lg:whitespace-nowrap
+            min-[1025px]:whitespace-nowrap
           "
         >
-          Contact us to discuss your project
+          Contact us to discuss <br className="min-[1025px]:hidden" /> your project
         </h2>
 
         {/* Paragraph */}
         <p
           className="
             mx-auto
-            mt-4
+            mt-[clamp(0.75rem,1.5vw,1rem)]
             w-full
-            whitespace-normal
-            text-[clamp(13px,1.6vw,16px)]
+            max-w-[clamp(20rem,70vw,70rem)]
+            break-words
+            text-[clamp(0.875rem,1.6vw,1rem)]
             font-normal
-            leading-6
-            tracking-[0.2px]
+            leading-[clamp(1.4,1.8vw,1.5)]
+            tracking-[clamp(0.01em,0.02vw,0.0125em)]
             text-[#BCC7DB]
-            lg:whitespace-nowrap
+            min-[1025px]:whitespace-nowrap
           "
         >
           Whether you're looking to automate a single workflow or build a custom
@@ -47,28 +77,51 @@ export default function CTA() {
         </p>
 
         {/* Button */}
-        <div className="mt-7 text-center">
+        <div
+          className="
+            mt-[clamp(1.5rem,3vw,1.75rem)]
+            flex
+            w-full
+            justify-center
+          "
+        >
           <a
             href="/contact"
             className="
               inline-flex
+              max-w-full
+              shrink-0
               items-center
-              gap-2
-              rounded-xl
+              justify-center
+              gap-[clamp(0.375rem,0.7vw,0.5rem)]
+              rounded-[clamp(0.625rem,1.2vw,0.75rem)]
               bg-white
-              px-4
-              py-3
-              text-[clamp(9px,2vw,16px)]
+              px-[clamp(1rem,2vw,1.5rem)]
+              py-[clamp(0.625rem,1.2vw,0.75rem)]
+              text-[clamp(0.75rem,1.2vw,1rem)]
               font-bold
+              leading-none
+              whitespace-nowrap
               text-black
               transition-all
               duration-300
               ease-out
               hover:scale-105
+              active:scale-95
             "
           >
-            Get Started
-            <ArrowUpRight size={15} />
+            <span>Get Started</span>
+
+            <ArrowUpRight
+              strokeWidth={2.5}
+              className="
+                h-[clamp(0.8rem,1.3vw,0.9375rem)]
+                w-[clamp(0.8rem,1.3vw,0.9375rem)]
+                shrink-0
+                transition-transform
+                duration-300
+              "
+            />
           </a>
         </div>
       </div>

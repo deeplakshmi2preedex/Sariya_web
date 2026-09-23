@@ -9,9 +9,8 @@ function PlatformDevelopment() {
   return (
     <>
       <div className="home-shell">
-        <div className="pt-5 px-25">
+       
           <Navbar />
-        </div>
 
         <main>
           <Hero />

@@ -1,4 +1,9 @@
-import { ArrowUpRight, Search, Code2, FilePenLine } from "lucide-react";
+import {
+  ArrowUpRight,
+  Search,
+  Code2,
+  FilePenLine,
+} from "lucide-react";
 
 const steps = [
   {
@@ -29,49 +34,216 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="pb-24">
-      <div className="container-page">
-        <div className="text-center">
-          <h2 className="text-[clamp(30px,4.5vw,50px)] font-semibold text-[#ffffff]">
+    <section
+      className="
+        w-full
+        max-w-full
+        overflow-hidden
+        pb-[clamp(3rem,8vw,6rem)]
+      "
+    >
+      <div
+        className="
+          container-page
+          mx-auto
+          w-full
+          max-w-full
+          px-[clamp(1rem,4vw,2.5rem)]
+        "
+      >
+        {/* ================= HEADING ================= */}
+
+        <div className="w-full max-w-full text-center">
+          <h2
+            className="
+              mx-auto
+              w-full
+              max-w-full
+              break-words
+              text-[clamp(1.875rem,4.5vw,3.125rem)]
+              font-semibold
+              leading-[1.15]
+              tracking-[clamp(0.01em,0.05vw,0.03em)]
+              text-white
+            "
+          >
             Business On Autopilot In Just 4 Steps
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-5 p-10 sm:grid-cols-2 lg:grid-cols-4">
+        {/* ================= PROCESS CARDS ================= */}
+
+        <div
+          className="
+            mx-auto
+            mt-[clamp(1.5rem,3vw,2rem)]
+            grid
+            w-full
+            min-w-0
+            grid-cols-[repeat(auto-fit,minmax(min(100%,16rem),1fr))]
+            gap-[clamp(1rem,2vw,1.25rem)]
+            p-0
+          "
+        >
           {steps.map(({ number, icon: Icon, title, text }) => (
             <article
               key={number}
-              className="min-h-[250px] min-w-[300px] rounded-xl border border-gray-500/30 bg-black p-5 shadow-[0_0_15px_rgba(156,163,175,0.15)] transition-colors duration-300 hover:bg-gray-800"
+              className="
+                flex
+                min-h-[clamp(14rem,28vw,15.625rem)]
+                w-full
+                min-w-0
+                flex-col
+                overflow-hidden
+                rounded-[clamp(0.75rem,1.5vw,1rem)]
+                border
+                border-gray-500/30
+                bg-black
+                p-[clamp(1.25rem,2.5vw,1.5rem)]
+                shadow-[0_0_15px_rgba(156,163,175,0.15)]
+                transition-all
+                duration-300
+                hover:border-gray-400/40
+                hover:bg-gray-800
+              "
             >
-              <div className="mt-5 text-[clamp(32px,4.2vw,60px)] text-[#414141]">
+              {/* ================= NUMBER ================= */}
+
+              <div
+                className="
+                  mt-[clamp(0.25rem,1vw,1.25rem)]
+                  w-full
+                  text-[clamp(2rem,4.2vw,3.75rem)]
+                  leading-none
+                  text-[#414141]
+                "
+              >
                 {number}
               </div>
 
-              <div className="mt-7 flex items-center gap-2 text-[clamp(15px,4.2vw,25px)] font-normal text-[#ffffff]">
+              {/* ================= ICON + TITLE ================= */}
+
+              <div
+                className="
+                  mt-[clamp(1.25rem,2.5vw,1.75rem)]
+                  flex
+                  min-w-0
+                  items-center
+                  gap-[clamp(0.5rem,1vw,0.75rem)]
+                  text-[clamp(0.9375rem,2.2vw,1.5625rem)]
+                  font-normal
+                  leading-[1.2]
+                  text-white
+                "
+              >
                 {Icon === "person-chalkboard" ? (
-                  <span className="flex h-[30px] w-[30px] items-center justify-center">
-                    <i className="fa-solid fa-person-chalkboard text-[24px] text-blue-400"></i>
+                  <span
+                    className="
+                      flex
+                      h-[clamp(1.5rem,3vw,1.875rem)]
+                      w-[clamp(1.5rem,3vw,1.875rem)]
+                      shrink-0
+                      items-center
+                      justify-center
+                    "
+                  >
+                    <i
+                      className="
+                        fa-solid
+                        fa-person-chalkboard
+                        text-[clamp(1.25rem,2.5vw,1.5rem)]
+                        text-blue-400
+                      "
+                    />
                   </span>
                 ) : (
-                  <Icon size={30} className="text-blue-400" />
+                  <Icon
+                    className="
+                      h-[clamp(1.5rem,3vw,1.875rem)]
+                      w-[clamp(1.5rem,3vw,1.875rem)]
+                      shrink-0
+                      text-blue-400
+                    "
+                  />
                 )}
 
-                <h3>{title}</h3>
+                <h3
+                  className="
+                    min-w-0
+                    break-words
+                  "
+                >
+                  {title}
+                </h3>
               </div>
 
-              <p className="mt-7 text-[clamp(10px,4vw,14px)] font-normal leading-[1.7] tracking-[1.2px] text-[#95A3B7]">
+              {/* ================= DESCRIPTION ================= */}
+
+              <p
+                className="
+                  mt-[clamp(1rem,2vw,1.75rem)]
+                  w-full
+                  min-w-0
+                  break-words
+                  text-[clamp(0.75rem,1.5vw,0.875rem)]
+                  font-normal
+                  leading-[1.7]
+                  tracking-[clamp(0.02em,0.08vw,0.075em)]
+                  text-[#95A3B7]
+                "
+              >
                 {text}
               </p>
             </article>
           ))}
         </div>
 
-        <div className="mt-7 text-center">
+        {/* ================= CTA BUTTON ================= */}
+
+        <div
+          className="
+            mt-[clamp(1.5rem,3vw,1.75rem)]
+            flex
+            w-full
+            justify-center
+          "
+        >
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-[clamp(9px, 4vw, 16px)] font-bold text-black"
+            className="
+              inline-flex
+              max-w-full
+              shrink-0
+              items-center
+              justify-center
+              gap-[clamp(0.375rem,0.7vw,0.625rem)]
+              rounded-[clamp(0.625rem,1.2vw,0.75rem)]
+              bg-white
+              px-[clamp(1rem,2vw,1.5rem)]
+              py-[clamp(0.625rem,1.2vw,0.75rem)]
+              text-[clamp(0.75rem,1.2vw,1rem)]
+              font-bold
+              leading-none
+              whitespace-nowrap
+              text-black
+              transition-all
+              duration-300
+              ease-out
+              hover:scale-105
+              hover:bg-white/90
+              active:scale-95
+            "
           >
-            Get Started <ArrowUpRight size={30} />
+            <span>Get Started</span>
+
+            <ArrowUpRight
+              strokeWidth={2.5}
+              className="
+                h-[clamp(1rem,2vw,1.5rem)]
+                w-[clamp(1rem,2vw,1.5rem)]
+                shrink-0
+              "
+            />
           </a>
         </div>
       </div>
