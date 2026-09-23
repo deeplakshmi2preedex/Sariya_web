@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { AlertCircle, ChevronDown } from "lucide-react";
+import "flag-icons/css/flag-icons.min.css";
 
 const countries = [
-  { name: "India", code: "+91", flag: "🇮🇳" },
-  { name: "United States", code: "+1", flag: "🇺🇸" },
-  { name: "United Kingdom", code: "+44", flag: "🇬🇧" },
-  { name: "Australia", code: "+61", flag: "🇦🇺" },
-  { name: "Canada", code: "+1", flag: "🇨🇦" },
-  { name: "Germany", code: "+49", flag: "🇩🇪" },
-  { name: "France", code: "+33", flag: "🇫🇷" },
-  { name: "United Arab Emirates", code: "+971", flag: "🇦🇪" },
+  { name: "India", code: "+91", flag: "in" },
+  { name: "United States", code: "+1", flag: "us" },
+  { name: "United Kingdom", code: "+44", flag: "gb" },
+  { name: "Canada", code: "+1", flag: "ca" },
+  { name: "Australia", code: "+61", flag: "au" },
+  { name: "Germany", code: "+49", flag: "de" },
+  { name: "France", code: "+33", flag: "fr" },
+  { name: "Singapore", code: "+65", flag: "sg" },
+  { name: "United Arab Emirates", code: "+971", flag: "ae" },
+  { name: "Japan", code: "+81", flag: "jp" },
 ];
 
 export default function Contact() {
@@ -24,6 +27,8 @@ export default function Contact() {
   const [country, setCountry] = useState(countries[0]);
   const [errors, setErrors] = useState({});
 
+  /* ================= INPUT CHANGE ================= */
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -35,8 +40,13 @@ export default function Contact() {
     setErrors((prev) => ({
       ...prev,
       [name]: "",
+      ...(name === "firstName" || name === "lastName"
+        ? { fullName: "" }
+        : {}),
     }));
   };
+
+  /* ================= VALIDATION ================= */
 
   const validateForm = () => {
     const newErrors = {};
@@ -66,6 +76,8 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
+  /* ================= SUBMIT ================= */
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -74,24 +86,57 @@ export default function Contact() {
     }
   };
 
+  /* ================= INPUT STYLE ================= */
+
   const inputClass = (field) => `
-    w-full rounded-md bg-white/10 px-4 py-2
-    text-[clamp(9px,2vw,16px)] text-white
-    outline-none border border-transparent
+    w-full
+    min-w-0
+    rounded-[clamp(0.4rem,0.7vw,0.6rem)]
+    bg-white/10
+    px-[clamp(0.65rem,1.2vw,1rem)]
+    py-[clamp(0.55rem,1vw,0.7rem)]
+    text-[clamp(0.75rem,1.3vw,1rem)]
+    leading-[1.4]
+    text-white
+    outline-none
+    border
+    border-transparent
     placeholder:text-white/45
-    transition-all duration-200
-    hover:border-white/50 hover:shadow-[0_0_15px_rgba(255,255,255,0.12)]
-    focus:border-white/70 focus:shadow-[0_0_15px_rgba(255,255,255,0.18)]
+    transition-all
+    duration-200
+    hover:border-white/50
+    hover:shadow-[0_0_15px_rgba(255,255,255,0.12)]
+    focus:border-white/70
+    focus:shadow-[0_0_15px_rgba(255,255,255,0.18)]
     ${errors[field] ? "border-red-400/70" : ""}
   `;
+
+  /* ================= ERROR MESSAGE ================= */
 
   const ErrorMessage = ({ message }) => {
     if (!message) return null;
 
     return (
-      <p className="mt-2 flex items-center gap-1.5 text-sm text-red-400">
-        <AlertCircle size={14} />
-        {message}
+      <p
+        className="
+          mt-[clamp(0.35rem,0.7vw,0.5rem)]
+          flex
+          items-center
+          gap-[clamp(0.25rem,0.5vw,0.4rem)]
+          text-[clamp(0.65rem,1vw,0.875rem)]
+          leading-[1.3]
+          text-red-400
+        "
+      >
+        <AlertCircle
+          className="
+            h-[clamp(0.7rem,1.2vw,0.875rem)]
+            w-[clamp(0.7rem,1.2vw,0.875rem)]
+            shrink-0
+          "
+        />
+
+        <span className="break-words">{message}</span>
       </p>
     );
   };
@@ -99,39 +144,145 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="m-10 mb-25 rounded-4xl bg-gradient-to-br from-emerald-900 to-[#022C22]"
+      className="
+        mx-[clamp(0.75rem,3vw,2.5rem)]
+        mb-[clamp(3rem,7vw,6.25rem)]
+        w-auto
+        max-w-full
+        overflow-hidden
+        rounded-[clamp(1.25rem,3vw,2.5rem)]
+        bg-gradient-to-br
+        from-emerald-900
+        to-[#022C22]
+      "
     >
-      {/* Outline Div */}
-      <div className="rounded-4xl border border-white/10 p-15">
-        {/* Inner Div */}
-        <div className="grid gap-10 rounded-[20px] bg-gradient-to-br from-emerald-700 to-emerald-900 p-10 lg:grid-cols-2">
-          {/* Content */}
-          <div>
-            <p className="text-[clamp(15px,4vw,35px)] font-bold pt-10">
+      {/* ================================================= */}
+      {/* OUTER BORDER */}
+      {/* ================================================= */}
+
+      <div
+        className="
+          w-full
+          rounded-[inherit]
+          border
+          border-white/10
+          p-[clamp(0.75rem,3vw,3.75rem)]
+        "
+      >
+        {/* ================================================= */}
+        {/* INNER CONTAINER */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            grid
+            w-full
+            min-w-0
+            gap-[clamp(1rem,3vw,2.5rem)]
+            rounded-[clamp(0.9rem,1.5vw,1.25rem)]
+            bg-gradient-to-br
+            from-emerald-700
+            to-emerald-900
+            p-[clamp(1rem,3vw,2.5rem)]
+            lg:grid-cols-[0.9fr_1.1fr]
+          "
+        >
+          {/* ================================================= */}
+          {/* LEFT CONTENT */}
+          {/* ================================================= */}
+
+          <div
+            className="
+              flex
+              min-w-0
+              w-full
+              flex-col
+              justify-center
+              px-[clamp(0rem,1vw,0.75rem)]
+              py-[clamp(0.5rem,2vw,1.5rem)]
+            "
+          >
+            {/* LOGO */}
+
+            <p
+              className="
+                pt-[clamp(0rem,1vw,0.75rem)]
+                text-[clamp(1.1rem,3vw,2.2rem)]
+                font-bold
+                leading-none
+                text-white
+              "
+            >
               sariya<span className="text-[#1C39DC]">.</span>
             </p>
 
-            <h2 className="pt-15  text-[clamp(15px,4vw,40px)] font-semibold leading-tight text-white leading[1.7]">
+            {/* HEADING */}
+
+            <h2
+              className="
+                mt-[clamp(1.5rem,4vw,3.75rem)]
+                max-w-full
+                break-words
+                text-[clamp(1.25rem,3.5vw,2.5rem)]
+                font-semibold
+                leading-[1.15]
+                text-white
+              "
+            >
               Ready to build your automated system?
             </h2>
 
-            <p className="mt-3 text-[clamp(9px,2vw,16px)] leading-[1.5] text-[#BCC7DB]">
+            {/* DESCRIPTION */}
+
+            <p
+              className="
+                mt-[clamp(0.75rem,1.5vw,1rem)]
+                max-w-full
+                break-words
+                text-[clamp(0.75rem,1.3vw,1rem)]
+                leading-[1.5]
+                text-[#BCC7DB]
+              "
+            >
               Schedule a 15-minute efficiency audit. We'll look at your current
               workflow and tell you exactly where development can save you
               money.
             </p>
           </div>
 
-          {/* Form */}
-          <div>
+          {/* ================================================= */}
+          {/* FORM */}
+          {/* ================================================= */}
+
+          <div className="min-w-0 w-full">
             <form
               onSubmit={handleSubmit}
-              className="rounded-xl bg-gradient-to-br from-emerald-800 to-emerald-950 p-8"
+              className="
+                w-full
+                min-w-0
+                rounded-[clamp(0.75rem,1.5vw,1rem)]
+                bg-gradient-to-br
+                from-emerald-800
+                to-emerald-950
+                p-[clamp(0.9rem,2.5vw,2rem)]
+              "
             >
-              {/* Inputs */}
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-                {/* First Name */}
-                <div>
+              {/* ================================================= */}
+              {/* INPUTS */}
+              {/* ================================================= */}
+
+              <div
+                className="
+                  grid
+                  min-w-0
+                  grid-cols-1
+                  gap-[clamp(1rem,2.5vw,2rem)]
+                  sm:grid-cols-2
+                "
+              >
+                {/* FIRST NAME */}
+
+                <div className="min-w-0">
                   <input
                     name="firstName"
                     value={formData.firstName}
@@ -140,11 +291,14 @@ export default function Contact() {
                     placeholder="First name"
                   />
 
-                  <ErrorMessage message={errors.fullName || errors.firstName} />
+                  <ErrorMessage
+                    message={errors.fullName || errors.firstName}
+                  />
                 </div>
 
-                {/* Last Name */}
-                <div>
+                {/* LAST NAME */}
+
+                <div className="min-w-0">
                   <input
                     name="lastName"
                     value={formData.lastName}
@@ -156,8 +310,9 @@ export default function Contact() {
                   <ErrorMessage message={errors.lastName} />
                 </div>
 
-                {/* Email */}
-                <div>
+                {/* EMAIL */}
+
+                <div className="min-w-0">
                   <input
                     name="email"
                     value={formData.email}
@@ -170,13 +325,23 @@ export default function Contact() {
                   <ErrorMessage message={errors.email} />
                 </div>
 
-                {/* Phone */}
-                <div>
+                {/* ================================================= */}
+                {/* PHONE */}
+                {/* ================================================= */}
+
+                <div className="min-w-0">
                   <div
                     className={`
-                      flex overflow-hidden rounded-md bg-white/10
-                      border border-transparent
-                      transition-all duration-200
+                      flex
+                      min-w-0
+                      w-full
+                      overflow-hidden
+                      rounded-[clamp(0.4rem,0.7vw,0.6rem)]
+                      bg-white/10
+                      border
+                      border-transparent
+                      transition-all
+                      duration-200
                       hover:border-white/50
                       hover:shadow-[0_0_15px_rgba(255,255,255,0.12)]
                       focus-within:border-white/70
@@ -184,19 +349,40 @@ export default function Contact() {
                       ${errors.phone ? "border-red-400/70" : ""}
                     `}
                   >
-                    {/* Country */}
-                    <div className="relative flex shrink-0 items-center border-r border-white/10">
+                    {/* COUNTRY SELECTOR */}
+
+                    <div
+                      className="
+                        relative
+                        flex
+                        shrink-0
+                        items-center
+                        border-r
+                        border-white/10
+                      "
+                    >
+                      {/* INVISIBLE NATIVE SELECT */}
+
                       <select
                         value={country.code + country.name}
                         onChange={(e) => {
                           const selected = countries.find(
-                            (item) => item.code + item.name === e.target.value,
+                            (item) =>
+                              item.code + item.name === e.target.value,
                           );
 
-                          setCountry(selected);
+                          if (selected) {
+                            setCountry(selected);
+                          }
                         }}
+                        aria-label="Select country"
                         className="
-                          absolute inset-0 w-full cursor-pointer
+                          absolute
+                          inset-0
+                          z-10
+                          h-full
+                          w-full
+                          cursor-pointer
                           opacity-0
                           [color-scheme:dark]
                         "
@@ -207,29 +393,76 @@ export default function Contact() {
                             value={item.code + item.name}
                             className="bg-black text-white"
                           >
-                            {item.flag} {item.name} {item.code}
+                            {item.name} {item.code}
                           </option>
                         ))}
                       </select>
 
-                      {/* Decreased country section height */}
-                      <div className="flex items-center gap-1.5 px-3 py-1 text-white">
-                        <span className="text-lg">{country.flag}</span>
-                        <span className="text-sm">{country.code}</span>
-                        <ChevronDown size={14} className="text-white/50" />
+                      {/* VISIBLE COUNTRY */}
+
+                      <div
+                        className="
+                          flex
+                          min-w-0
+                          items-center
+                          gap-[clamp(0.3rem,0.7vw,0.5rem)]
+                          px-[clamp(0.5rem,1vw,0.75rem)]
+                          py-[clamp(0.5rem,1vw,0.7rem)]
+                          text-white
+                        "
+                      >
+                        {/* ACTUAL FLAG */}
+
+                        <span
+                          className={`
+                            fi
+                            fi-${country.flag}
+                            shrink-0
+                            text-[clamp(1rem,2vw,1.25rem)]
+                          `}
+                          aria-hidden="true"
+                        />
+
+                        {/* COUNTRY CODE */}
+
+                        <span
+                          className="
+                            whitespace-nowrap
+                            text-[clamp(0.7rem,1.1vw,0.875rem)]
+                          "
+                        >
+                          {country.code}
+                        </span>
+
+                        {/* DROPDOWN ICON */}
+
+                        <ChevronDown
+                          className="
+                            h-[clamp(0.7rem,1.2vw,0.875rem)]
+                            w-[clamp(0.7rem,1.2vw,0.875rem)]
+                            shrink-0
+                            text-white/50
+                          "
+                        />
                       </div>
                     </div>
 
-                    {/* Phone Number */}
+                    {/* PHONE NUMBER */}
+
                     <input
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
                       className="
-                        min-w-0 flex-1 bg-transparent
-                        px-3 py-2
-                        text-[clamp(9px,2vw,16px)]
-                        text-white outline-none
+                        min-w-0
+                        flex-1
+                        bg-transparent
+                        px-[clamp(0.6rem,1vw,0.75rem)]
+                        py-[clamp(0.5rem,1vw,0.7rem)]
+                        text-[clamp(0.75rem,1.3vw,1rem)]
+                        leading-[1.4]
+                        text-white
+                        outline-none
                         placeholder:text-white/45
                       "
                       placeholder="Phone number"
@@ -241,19 +474,37 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Message */}
-              <div className="mt-8">
+              {/* ================================================= */}
+              {/* MESSAGE */}
+              {/* ================================================= */}
+
+              <div
+                className="
+                  mt-[clamp(1rem,2.5vw,2rem)]
+                  min-w-0
+                "
+              >
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   className={`
-                    min-h-24 w-full resize-none rounded-md
-                    bg-white/10 px-2 py-2
-                    text-[clamp(9px,2vw,16px)] text-white
-                    outline-none border border-transparent
+                    min-h-[clamp(6rem,12vw,8rem)]
+                    w-full
+                    resize-none
+                    rounded-[clamp(0.4rem,0.7vw,0.6rem)]
+                    bg-white/10
+                    px-[clamp(0.65rem,1vw,0.75rem)]
+                    py-[clamp(0.55rem,1vw,0.7rem)]
+                    text-[clamp(0.75rem,1.3vw,1rem)]
+                    leading-[1.4]
+                    text-white
+                    outline-none
+                    border
+                    border-transparent
                     placeholder:text-white/45
-                    transition-all duration-200
+                    transition-all
+                    duration-200
                     hover:border-white/50
                     hover:shadow-[0_0_15px_rgba(255,255,255,0.12)]
                     focus:border-white/70
@@ -266,19 +517,32 @@ export default function Contact() {
                 <ErrorMessage message={errors.message} />
               </div>
 
-              {/* Submit Button */}
+              {/* ================================================= */}
+              {/* SUBMIT BUTTON */}
+              {/* ================================================= */}
+
               <button
                 type="submit"
                 className="
-                  mt-5 flex w-full items-center justify-center
-                  gap-2 rounded-xl bg-white p-2.5
-                  text-[clamp(9px,2vw,16px)] font-bold text-black
-                  transition-all duration-300 ease-in-out
+                  mt-[clamp(1rem,2vw,1.25rem)]
+                  flex
+                  min-h-[clamp(2.75rem,5vw,3rem)]
+                  w-full
+                  items-center
+                  justify-center
+                  gap-[clamp(0.35rem,0.7vw,0.5rem)]
+                  rounded-[clamp(0.65rem,1vw,0.75rem)]
+                  bg-white
+                  px-[clamp(0.75rem,1.5vw,1rem)]
+                  py-[clamp(0.5rem,1vw,0.65rem)]
+                  text-[clamp(0.75rem,1.3vw,1rem)]
+                  font-bold
+                  text-black
+                  transition-all
+                  duration-300
+                  ease-in-out
                   hover:bg-gray-300
-                  hover:text-[clamp(8px,2vw,14px)]
-                  hover:font-normal
                   hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]
-                   min-h-[48px]
                 "
               >
                 Send My Audit Request

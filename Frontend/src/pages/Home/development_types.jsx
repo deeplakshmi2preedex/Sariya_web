@@ -35,72 +35,207 @@ const services = [
 
 export default function DevelopmentTypes() {
   return (
-    <section id="services" className="p-10">
-      <div className="container-page">
+    <section
+      id="services"
+      className="
+        w-full
+        overflow-hidden
+        py-[clamp(40px,5vw,80px)]
+      "
+    >
+      <div
+        className="
+          container-page
+          w-full
+          px-[clamp(16px,4vw,60px)]
+        "
+      >
+        {/* ================= HEADER ================= */}
+
         <div className="text-center">
-          <h2 className="text-[clamp(32px,3.5vw,50px)] font-semibold">
+          <h2
+            className="
+              text-[clamp(2rem,3.5vw,3.125rem)]
+              font-semibold
+              leading-[1.2]
+              tracking-[-0.02em]
+              text-white
+            "
+          >
             Types Of Development
           </h2>
 
-          <p className="mt-2 text-[clamp(12px,1.2vw,16px)] text-[#BCC7DB]">
+          <p
+            className="
+              mx-auto
+              mt-[clamp(8px,1vw,12px)]
+              max-w-[700px]
+              text-[clamp(0.75rem,1.2vw,1rem)]
+              font-normal
+              leading-[1.5]
+              text-[#BCC7DB]
+            "
+          >
             We bridge the gap between where you are and where you need to be.
           </p>
         </div>
 
-        <div className="mt-9 grid gap-12 md:grid-cols-3">
+        {/* ================= SERVICE CARDS ================= */}
+
+        <div
+          className="
+            mt-[clamp(28px,3.5vw,36px)]
+            grid
+            grid-cols-1
+            gap-[clamp(20px,3vw,48px)]
+            sm:grid-cols-2
+            lg:grid-cols-3
+          "
+        >
           {services.map(
             ({ icon: Icon, eyebrow, title, body, items, tone }) => (
               <article
                 key={title}
                 className="
-                  min-h-[650px]
+                  flex
+                  min-w-0
+                  w-full
+                  flex-col
                   rounded-xl
                   border
                   border-black/10
                   bg-white
+                  p-[clamp(22px,3vw,40px)]
                   text-black
-                  p-10
+                  min-h-[auto]
+                  lg:min-h-[650px]
                 "
               >
+                {/* ================= ICON ================= */}
+
                 <div
-                  className={`mb-7 flex h-15 w-15 items-center justify-center rounded-full ${
-                    tone === "blue"
-                      ? "bg-blue-50 text-blue-600"
-                      : tone === "purple"
-                      ? "bg-purple-50 text-purple-600"
-                      : "bg-emerald-50 text-emerald-600"
-                  }`}
+                  className={`
+                    mb-[clamp(20px,2.5vw,28px)]
+                    flex
+                    h-[clamp(48px,4vw,60px)]
+                    w-[clamp(48px,4vw,60px)]
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-full
+                    ${
+                      tone === "blue"
+                        ? "bg-blue-50 text-blue-600"
+                        : tone === "purple"
+                        ? "bg-purple-50 text-purple-600"
+                        : "bg-emerald-50 text-emerald-600"
+                    }
+                  `}
                 >
                   {Icon === "gears" ? (
-                    <i className="fa-solid fa-gears text-[20px]"></i>
+                    <i
+                      className="
+                        fa-solid
+                        fa-gears
+                        text-[clamp(18px,1.8vw,20px)]
+                      "
+                    ></i>
                   ) : (
-                    <Icon size={30} />
+                    <Icon
+                      size="clamp(24px,2.2vw,30px)"
+                    />
                   )}
                 </div>
 
-                <p className="text-[clamp(14px,1vw,16px)] font-bold text-black leading-[2.5] tracking-[1.5]">
+                {/* ================= EYEBROW ================= */}
+
+                <p
+                  className="
+                    text-[clamp(0.8125rem,1vw,1rem)]
+                    font-bold
+                    leading-[1.6]
+                    tracking-[clamp(0.04em,0.1vw,0.094em)]
+                    text-black
+                  "
+                >
                   {eyebrow}
                 </p>
 
-                <h3 className="mt-10 mb-10 text-[clamp(16px,2vw,22px)] font-semibold leading-[1.5] tracking-[1.1px] text-[#082F7B]">
+                {/* ================= TITLE ================= */}
+
+                <h3
+                  className="
+                    mt-[clamp(24px,3vw,40px)]
+                    mb-[clamp(22px,3vw,40px)]
+                    text-[clamp(1rem,2vw,1.375rem)]
+                    font-semibold
+                    leading-[1.5]
+                    tracking-[clamp(0.03em,0.08vw,0.069em)]
+                    text-[#082F7B]
+                  "
+                >
                   {title}
                 </h3>
 
-                <p className="mb-12 text-[clamp(14px,1vw,16px)] text-[#4D5A6E] leading-[1.5] tracking-[1.2px]">
+                {/* ================= BODY ================= */}
+
+                <p
+                  className="
+                    mb-[clamp(28px,3.5vw,48px)]
+                    text-[clamp(0.875rem,1vw,1rem)]
+                    font-normal
+                    leading-[1.5]
+                    tracking-[clamp(0.02em,0.06vw,0.075em)]
+                    text-[#4D5A6E]
+                  "
+                >
                   {body}
                 </p>
 
-                <ul className="mt-6 space-y-2">
+                {/* ================= FEATURES ================= */}
+
+                <ul
+                  className="
+                    mt-auto
+                    space-y-[clamp(8px,1vw,10px)]
+                  "
+                >
                   {items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-3 text-[clamp(14px,1vw,16px)] text-[#505967] font-bold"
+                      className="
+                        flex
+                        min-w-0
+                        items-center
+                        gap-[clamp(10px,1vw,12px)]
+                        text-[clamp(0.875rem,1vw,1rem)]
+                        font-bold
+                        leading-[1.4]
+                        text-[#505967]
+                      "
                     >
-                      <span className="flex h-4 w-4 items-center justify-center rounded-full font-[10px]">
-                        <i className="fa-regular fa-circle-check text-blue-700"></i>
+                      <span
+                        className="
+                          flex
+                          h-4
+                          w-4
+                          shrink-0
+                          items-center
+                          justify-center
+                        "
+                      >
+                        <i
+                          className="
+                            fa-regular
+                            fa-circle-check
+                            text-blue-700
+                          "
+                        ></i>
                       </span>
 
-                      {item}
+                      <span className="min-w-0">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>

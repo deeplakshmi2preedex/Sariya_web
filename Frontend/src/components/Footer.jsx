@@ -2,10 +2,74 @@ import footer from "../assets/video/footer.mov";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const quickLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "FAQ", path: "/FAQ" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const services = [
+    {
+      name: "Custom Development",
+      path: "/services/custom-development",
+    },
+    {
+      name: "Platform Development",
+      path: "/services/platform-development",
+    },
+    {
+      name: "Workflow Automation",
+      path: "/services/workflow-automation",
+    },
+  ];
+
+  const arrowLinkClass = `
+    group
+    flex
+    min-w-0
+    w-fit
+    max-w-full
+    items-center
+    gap-[clamp(0.35rem,0.6vw,0.5rem)]
+    text-[clamp(0.7rem,0.85vw,0.9375rem)]
+    leading-[1.4]
+    text-[#C2C2C2]
+    transition-colors
+    duration-300
+    ease-in-out
+    hover:text-[#F8DC9B]
+  `;
+
+  const arrowIconClass = `
+    fa-solid
+    fa-angles-right
+    shrink-0
+    -translate-x-[clamp(0.4rem,0.7vw,0.75rem)]
+    text-[clamp(0.45rem,0.55vw,0.625rem)]
+    opacity-0
+    transition-all
+    duration-300
+    ease-in-out
+    group-hover:translate-x-0
+    group-hover:opacity-100
+  `;
+
+  const arrowTextClass = `
+    min-w-0
+    -translate-x-[clamp(0.4rem,0.7vw,0.75rem)]
+    break-words
+    transition-transform
+    duration-300
+    ease-in-out
+    group-hover:translate-x-0
+  `;
+
   return (
-    <footer className="relative overflow-hidden text-white">
+    <footer className="relative w-full max-w-full overflow-hidden text-white">
       {/* ================= BACKGROUND ================= */}
-      <div className="absolute inset-0 -z-0">
+      <div className="absolute inset-0 -z-0 overflow-hidden">
         <div className="absolute inset-0 bg-black" />
 
         <video
@@ -13,7 +77,14 @@ export default function Footer() {
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            object-center
+          "
         >
           <source src={footer} type="video/mp4" />
         </video>
@@ -21,30 +92,39 @@ export default function Footer() {
         {/* Subtle abstract waves */}
         <div
           className="
-            absolute inset-0 opacity-30
-            bg-[radial-gradient(ellipse_at_25%_50%,rgba(255,255,255,0.08),transparent_35%),
-            radial-gradient(ellipse_at_45%_70%,rgba(255,255,255,0.05),transparent_30%)]
+            absolute
+            inset-0
+            opacity-30
+            bg-[radial-gradient(ellipse_at_25%_50%,rgba(255,255,255,0.08),transparent_35%),radial-gradient(ellipse_at_45%_70%,rgba(255,255,255,0.05),transparent_30%)]
           "
         />
 
         <div
           className="
-            absolute -left-[10%] top-[25%]
-            h-[500px] w-[700px]
+            absolute
+            -left-[12%]
+            top-[25%]
+            h-[clamp(14rem,35vw,31.25rem)]
+            w-[clamp(20rem,48vw,43.75rem)]
             rotate-[-20deg]
             rounded-[50%]
-            border border-white/[0.025]
+            border
+            border-white/[0.025]
             shadow-[0_0_80px_rgba(255,255,255,0.02)]
           "
         />
 
         <div
           className="
-            absolute left-[15%] top-[45%]
-            h-[400px] w-[650px]
+            absolute
+            left-[15%]
+            top-[45%]
+            h-[clamp(11rem,28vw,25rem)]
+            w-[clamp(18rem,45vw,40.625rem)]
             rotate-[25deg]
             rounded-[50%]
-            border border-white/[0.02]
+            border
+            border-white/[0.02]
           "
         />
       </div>
@@ -52,32 +132,43 @@ export default function Footer() {
       {/* ================= MAIN FOOTER ================= */}
       <div
         className="
-          relative z-10 mx-auto max-w-[1920px]
-          px-6 py-12
-          sm:px-10
-          lg:px-[54px] lg:py-14
+          relative
+          z-10
+          mx-auto
+          w-full
+          max-w-[1920px]
+          px-[clamp(1rem,3.2vw,3.375rem)]
+          py-[clamp(2.5rem,5vw,3.5rem)]
         "
       >
         {/* ================= TOP CONTENT ================= */}
         <div
           className="
-            grid gap-12
+            grid
+            w-full
+            min-w-0
+            grid-cols-1
+            gap-[clamp(2.5rem,5vw,4rem)]
             sm:grid-cols-2
+            sm:gap-x-[clamp(2rem,5vw,4rem)]
+            sm:gap-y-[clamp(2.5rem,5vw,4rem)]
             lg:grid-cols-[1.45fr_0.85fr_1fr_0.75fr]
-            lg:gap-16
+            lg:gap-[clamp(2rem,4vw,4rem)]
           "
         >
           {/* ================= BRAND ================= */}
-          <div>
+          <div className="min-w-0 w-full">
             {/* Logo */}
             <Link
               to="/"
               className="
-                block w-fit
-                text-[clamp(15px,4vw,40px)]
+                block
+                w-fit
+                max-w-full
+                text-[clamp(1.5rem,3vw,2.5rem)]
                 font-bold
                 leading-none
-                tracking-[-2px]
+                tracking-[clamp(-0.08em,-0.15vw,-0.05em)]
               "
             >
               sariya<span className="text-[#1C39DC]">.</span>
@@ -86,8 +177,9 @@ export default function Footer() {
             {/* Heading */}
             <p
               className="
-                mt-7
-                text-[clamp(18px,2vw,23.36px)]
+                mt-[clamp(1.25rem,2.5vw,1.75rem)]
+                max-w-full
+                text-[clamp(1rem,1.55vw,1.46rem)]
                 leading-[1.2]
               "
             >
@@ -97,9 +189,11 @@ export default function Footer() {
             {/* Description */}
             <p
               className="
-                mt-4
-                max-w-[500px]
-                text-[clamp(8px,2vw,13px)]
+                mt-[clamp(0.75rem,1.5vw,1rem)]
+                w-full
+                max-w-[clamp(18rem,32vw,31.25rem)]
+                break-words
+                text-[clamp(0.7rem,0.85vw,0.8125rem)]
                 font-normal
                 leading-[1.5]
                 text-white
@@ -112,22 +206,24 @@ export default function Footer() {
             <Link
               to="/contact"
               className="
-                mt-6
+                mt-[clamp(1.25rem,2vw,1.5rem)]
                 flex
                 w-fit
+                max-w-full
                 items-center
-                gap-3
+                gap-[clamp(0.4rem,0.7vw,0.75rem)]
                 rounded-full
                 bg-white
-                px-6
-                py-3
-                text-[clamp(10px,2vw,17px)]
+                px-[clamp(1rem,1.8vw,1.5rem)]
+                py-[clamp(0.6rem,1vw,0.75rem)]
+                text-[clamp(0.7rem,0.9vw,1.0625rem)]
                 font-normal
+                leading-none
                 text-black
                 transition-all
                 duration-300
                 ease-in-out
-                hover:scale-105
+                hover:scale-[1.03]
                 hover:bg-[#4A4A4A]
                 hover:text-white
                 hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]
@@ -138,18 +234,16 @@ export default function Footer() {
                   fa-solid
                   fa-plus
                   flex
-                  h-[15px]
-                  w-[15px]
+                  aspect-square
+                  w-[clamp(0.7rem,1vw,0.9375rem)]
+                  shrink-0
                   items-center
                   justify-center
-                  text-[14px]
-                  transition-colors
-                  duration-300
-                  ease-in-out
+                  text-[clamp(0.6rem,0.8vw,0.875rem)]
                 "
               />
 
-              <span className="transition-colors duration-300 ease-in-out">
+              <span className="whitespace-nowrap">
                 Become a client
               </span>
             </Link>
@@ -157,20 +251,21 @@ export default function Footer() {
             {/* Email */}
             <p
               className="
-                mt-9
-                max-w-[350px]
-                text-[clamp(9px,2vw,14px)]
+                mt-[clamp(1.5rem,3vw,2.25rem)]
+                w-full
+                max-w-[clamp(18rem,25vw,21.875rem)]
+                break-words
+                text-[clamp(0.7rem,0.85vw,0.875rem)]
                 leading-[1.55]
                 text-white
               "
             >
-              Have other questions or just want to
-              <br />
-              ask?{" "}
+              Have other questions or just want to ask?{" "}
               <a
                 href="mailto:care@sariyadesigns.com"
                 className="
                   font-bold
+                  break-all
                   transition-colors
                   duration-300
                   hover:text-[#F8DC9B]
@@ -182,332 +277,108 @@ export default function Footer() {
           </div>
 
           {/* ================= QUICK LINKS ================= */}
-          <div>
-            <h3 className="text-[clamp(9px,2vw,20px)] font-normal text-white">
+          <div className="min-w-0 w-full">
+            <h3
+              className="
+                text-[clamp(0.8rem,1.25vw,1.25rem)]
+                font-normal
+                leading-[1.2]
+                text-white
+              "
+            >
               Quick Links
             </h3>
 
-            <nav className="mt-5 flex flex-col gap-3">
-              {/* Home */}
-              <Link
-                to="/"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
+            <nav
+              className="
+                mt-[clamp(1rem,1.5vw,1.25rem)]
+                flex
+                flex-col
+                gap-[clamp(0.65rem,1vw,0.8rem)]
+              "
+            >
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={arrowLinkClass}
                 >
-                  Home
-                </span>
-              </Link>
+                  <i className={arrowIconClass} />
 
-              {/* About */}
-              <Link
-                to="/about"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
-                >
-                  About
-                </span>
-              </Link>
-
-              {/* Services */}
-              <Link
-                to="/services"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
-                >
-                  Services
-                </span>
-              </Link>
-
-              {/* FAQ */}
-              <Link
-                to="/FAQ"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
-                >
-                  FAQ
-                </span>
-              </Link>
-
-              {/* Contact */}
-              <Link
-                to="/contact"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
-                >
-                  Contact
-                </span>
-              </Link>
+                  <span className={arrowTextClass}>
+                    {link.name}
+                  </span>
+                </Link>
+              ))}
             </nav>
           </div>
 
           {/* ================= SERVICES ================= */}
-          <div>
-            <h3 className="text-[clamp(9px,2vw,20px)] font-normal text-white">
+          <div className="min-w-0 w-full">
+            <h3
+              className="
+                text-[clamp(0.8rem,1.25vw,1.25rem)]
+                font-normal
+                leading-[1.2]
+                text-white
+              "
+            >
               Services
             </h3>
 
-            <nav className="mt-5 flex flex-col gap-3">
-              {/* Custom Development */}
-              <Link
-                to="/services/custom-development"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
+            <nav
+              className="
+                mt-[clamp(1rem,1.5vw,1.25rem)]
+                flex
+                flex-col
+                gap-[clamp(0.65rem,1vw,0.8rem)]
+              "
+            >
+              {services.map((service) => (
+                <Link
+                  key={service.name}
+                  to={service.path}
+                  className={arrowLinkClass}
                 >
-                  Custom Development
-                </span>
-              </Link>
+                  <i className={arrowIconClass} />
 
-              {/* Platform Development */}
-              <Link
-                to="/services/platform-development"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
-                >
-                  Platform Development
-                </span>
-              </Link>
-
-              {/* Workflow Automation */}
-              <Link
-                to="/services/workflow-automation"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
-              >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
-
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
-                >
-                  Workflow Automation
-                </span>
-              </Link>
+                  <span className={arrowTextClass}>
+                    {service.name}
+                  </span>
+                </Link>
+              ))}
             </nav>
           </div>
 
           {/* ================= CONTACT ================= */}
-          <div>
-            <h3 className="text-[clamp(9px,2vw,20px)] font-normal text-white">
+          <div className="min-w-0 w-full">
+            <h3
+              className="
+                text-[clamp(0.8rem,1.25vw,1.25rem)]
+                font-normal
+                leading-[1.2]
+                text-white
+              "
+            >
               Contact Us
             </h3>
 
-            <div className="mt-5 flex flex-col gap-3">
+            <div
+              className="
+                mt-[clamp(1rem,1.5vw,1.25rem)]
+                flex
+                flex-col
+                gap-[clamp(0.65rem,1vw,0.8rem)]
+              "
+            >
               {/* Phone */}
               <a
                 href="tel:+918826418355"
-                className="
-                  group flex w-fit items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
-                  text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
-                  hover:text-[#F8DC9B]
-                "
+                className={arrowLinkClass}
               >
-                <i
-                  className="
-                    fa-solid fa-angles-right
-                    -translate-x-3
-                    text-[10px]
-                    opacity-0
-                    transition-all duration-300 ease-in-out
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                />
+                <i className={arrowIconClass} />
 
-                <span
-                  className="
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
-                    group-hover:translate-x-0
-                  "
-                >
+                <span className={arrowTextClass}>
                   +91-8826418355
                 </span>
               </a>
@@ -516,21 +387,34 @@ export default function Footer() {
               <a
                 href="mailto:care@sariyadesigns.com"
                 className="
-                  group flex w-fit max-w-full items-center gap-2
-                  text-[clamp(9px,2vw,15px)]
+                  group
+                  flex
+                  min-w-0
+                  w-fit
+                  max-w-full
+                  items-start
+                  gap-[clamp(0.35rem,0.6vw,0.5rem)]
+                  text-[clamp(0.7rem,0.85vw,0.9375rem)]
+                  leading-[1.4]
                   text-[#C2C2C2]
-                  transition-colors duration-300 ease-in-out
+                  transition-colors
+                  duration-300
+                  ease-in-out
                   hover:text-[#F8DC9B]
                 "
               >
                 <i
                   className="
-                    fa-solid fa-angles-right
+                    fa-solid
+                    fa-angles-right
+                    mt-[0.2em]
                     shrink-0
-                    -translate-x-3
-                    text-[10px]
+                    -translate-x-[clamp(0.4rem,0.7vw,0.75rem)]
+                    text-[clamp(0.45rem,0.55vw,0.625rem)]
                     opacity-0
-                    transition-all duration-300 ease-in-out
+                    transition-all
+                    duration-300
+                    ease-in-out
                     group-hover:translate-x-0
                     group-hover:opacity-100
                   "
@@ -538,9 +422,13 @@ export default function Footer() {
 
                 <span
                   className="
+                    min-w-0
+                    max-w-full
                     break-all
-                    -translate-x-2
-                    transition-transform duration-300 ease-in-out
+                    -translate-x-[clamp(0.4rem,0.7vw,0.75rem)]
+                    transition-transform
+                    duration-300
+                    ease-in-out
                     group-hover:translate-x-0
                   "
                 >
@@ -552,31 +440,49 @@ export default function Footer() {
         </div>
 
         {/* ================= DIVIDER ================= */}
-        <div className="mt-12 h-px w-full bg-white/20" />
+        <div
+          className="
+            mt-[clamp(2.5rem,5vw,3rem)]
+            h-px
+            w-full
+            bg-white/20
+          "
+        />
 
         {/* ================= BOTTOM ================= */}
         <div
           className="
             flex
+            w-full
+            min-w-0
             flex-col
-            gap-8
-            pt-7
+            gap-[clamp(1.5rem,3vw,2rem)]
+            pt-[clamp(1.25rem,2vw,1.75rem)]
             sm:flex-row
             sm:items-center
             sm:justify-between
           "
         >
           {/* ================= SOCIAL ICONS ================= */}
-          <div className="flex items-center gap-3">
+          <div
+            className="
+              flex
+              shrink-0
+              items-center
+              gap-[clamp(0.5rem,0.8vw,0.75rem)]
+            "
+          >
             {/* Facebook */}
             <a
               href="https://www.facebook.com/sariyadesigns/"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               className="
                 flex
-                h-9
-                w-9
+                aspect-square
+                w-[clamp(2rem,3vw,2.25rem)]
+                shrink-0
                 items-center
                 justify-center
                 rounded-full
@@ -588,18 +494,26 @@ export default function Footer() {
                 hover:scale-110
               "
             >
-              <i className="fa-brands fa-facebook-f text-[27px]" />
+              <i
+                className="
+                  fa-brands
+                  fa-facebook-f
+                  text-[clamp(1rem,1.5vw,1.45rem)]
+                "
+              />
             </a>
 
             {/* Instagram */}
             <a
               href="https://www.instagram.com/sariya.designs"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="
                 flex
-                h-9
-                w-9
+                aspect-square
+                w-[clamp(2rem,3vw,2.25rem)]
+                shrink-0
                 items-center
                 justify-center
                 rounded-full
@@ -611,7 +525,13 @@ export default function Footer() {
                 hover:scale-110
               "
             >
-              <i className="fa-brands fa-instagram text-[27px]" />
+              <i
+                className="
+                  fa-brands
+                  fa-instagram
+                  text-[clamp(1rem,1.5vw,1.45rem)]
+                "
+              />
             </a>
 
             {/* WhatsApp */}
@@ -622,8 +542,9 @@ export default function Footer() {
               aria-label="WhatsApp"
               className="
                 flex
-                h-9
-                w-9
+                aspect-square
+                w-[clamp(2rem,3vw,2.25rem)]
+                shrink-0
                 items-center
                 justify-center
                 rounded-full
@@ -635,7 +556,13 @@ export default function Footer() {
                 hover:scale-110
               "
             >
-              <i className="fa-brands fa-whatsapp text-[27px]" />
+              <i
+                className="
+                  fa-brands
+                  fa-whatsapp
+                  text-[clamp(1rem,1.5vw,1.45rem)]
+                "
+              />
             </a>
           </div>
 
@@ -643,22 +570,27 @@ export default function Footer() {
           <div
             className="
               flex
+              min-w-0
+              max-w-full
               flex-wrap
               items-center
-              gap-x-8
-              gap-y-3
-              text-[clamp(9px,2vw,14px)]
-              text-[#FFFFFF]
+              gap-x-[clamp(1rem,2vw,2rem)]
+              gap-y-[clamp(0.5rem,1vw,0.75rem)]
+              text-[clamp(0.65rem,0.8vw,0.875rem)]
+              leading-[1.4]
+              text-white
+              sm:justify-end
             "
           >
-            <p>© 2026 Sariya Designs | All Rights Reserved.</p>
+            <p className="break-words">
+              © 2026 Sariya Designs | All Rights Reserved.
+            </p>
 
             {/* Terms */}
             <Link
               to="/terms"
               className="
-                text-[clamp(9px,2vw,15px)]
-                text-[#FFFFFF]
+                whitespace-nowrap
                 transition-colors
                 duration-300
                 hover:text-[#F8DC9B]
@@ -671,8 +603,7 @@ export default function Footer() {
             <Link
               to="/privacy"
               className="
-                text-[clamp(9px,2vw,15px)]
-                text-[#FFFFFF]
+                whitespace-nowrap
                 transition-colors
                 duration-300
                 hover:text-[#F8DC9B]

@@ -22,8 +22,8 @@ export default function Hero() {
           grid
           w-full
           grid-cols-1
-          gap-[clamp(40px,5vw,80px)]
-          px-[clamp(20px,4vw,60px)]
+          gap-[clamp(45px,5vw,80px)]
+          px-[clamp(16px,4vw,60px)]
           lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)]
         "
       >
@@ -36,10 +36,12 @@ export default function Hero() {
             max-w-[760px]
           "
         >
+          {/* WE BUILD */}
+
           <p
             className="
-              mb-[clamp(22px,2.2vw,30px)]
-              text-[clamp(0.9rem,1.2vw,1.125rem)]
+              mb-[clamp(20px,2.2vw,30px)]
+              text-[clamp(0.8rem,1.2vw,1.125rem)]
               font-bold
               leading-none
               tracking-[0.055em]
@@ -49,11 +51,14 @@ export default function Hero() {
             WE BUILD
           </p>
 
+          {/* HEADING */}
+
           <h1
             className="
+              max-w-full
               text-[clamp(2rem,3.8vw,3.5rem)]
               font-semibold
-              leading-[1.25]
+              leading-[1.2]
               tracking-[0.01em]
               text-white
             "
@@ -71,7 +76,7 @@ export default function Hero() {
 
           <p
             className="
-              mt-[clamp(24px,3vw,36px)]
+              mt-[clamp(22px,3vw,36px)]
               w-full
               max-w-[790px]
               text-[clamp(0.8rem,1vw,1rem)]
@@ -80,34 +85,39 @@ export default function Hero() {
               text-white
             "
           >
-            You've outgrown basic templates. We craft “out-of-the-box” software
-            that centralizes your messy workflows into one high-efficiency
-            dashboard.
+            You've outgrown basic templates. We craft “out-of-the-box”
+            software that centralizes your messy workflows into one
+            high-efficiency dashboard.
           </p>
 
           {/* ================= BUTTONS ================= */}
 
           <div
             className="
-              mt-[clamp(24px,2.5vw,30px)]
+              mt-[clamp(22px,2.5vw,30px)]
               flex
               flex-wrap
-              gap-[clamp(14px,2vw,32px)]
+              items-center
+              gap-[clamp(12px,2vw,32px)]
             "
           >
+            {/* AUTOMATE */}
+
             <a
               href="#contact"
               className="
                 inline-flex
                 shrink-0
                 items-center
+                justify-center
                 gap-2
                 rounded-[16px]
                 bg-blue-600
-                px-[clamp(20px,2.5vw,34px)]
-                py-[clamp(12px,1.2vw,15px)]
-                text-[clamp(0.75rem,1vw,1rem)]
+                px-[clamp(18px,2.5vw,34px)]
+                py-[clamp(11px,1.2vw,15px)]
+                text-[clamp(0.72rem,1vw,1rem)]
                 font-bold
+                whitespace-nowrap
                 text-white
                 shadow-lg
                 shadow-blue-900/30
@@ -117,8 +127,17 @@ export default function Hero() {
               "
             >
               AUTOMATE TODAY
-              <ArrowUpRight className="h-[clamp(14px,1.3vw,17px)] w-[clamp(14px,1.3vw,17px)]" />
+
+              <ArrowUpRight
+                className="
+                  h-[clamp(14px,1.3vw,17px)]
+                  w-[clamp(14px,1.3vw,17px)]
+                  shrink-0
+                "
+              />
             </a>
+
+            {/* EXPLORE */}
 
             <a
               href="#services"
@@ -126,12 +145,14 @@ export default function Hero() {
                 inline-flex
                 shrink-0
                 items-center
+                justify-center
                 rounded-[16px]
                 bg-white
-                px-[clamp(22px,2.7vw,38px)]
-                py-[clamp(12px,1.2vw,15px)]
-                text-[clamp(0.75rem,1vw,1rem)]
+                px-[clamp(20px,2.7vw,38px)]
+                py-[clamp(11px,1.2vw,15px)]
+                text-[clamp(0.72rem,1vw,1rem)]
                 font-bold
+                whitespace-nowrap
                 text-[#082F7B]
                 transition-all
                 duration-300
@@ -148,10 +169,9 @@ export default function Hero() {
         <div
           className="
             relative
-            hidden
             min-w-0
-            min-h-[clamp(400px,42vw,520px)]
             w-full
+            min-h-[clamp(360px,55vw,520px)]
             lg:block
           "
         >
@@ -161,10 +181,11 @@ export default function Hero() {
             className="
               absolute
               right-0
-              top-[8px]
-              h-[clamp(300px,30vw,415px)]
-              w-[min(100%,560px)]
-              rounded-[28px]
+              top-0
+              h-[clamp(280px,30vw,415px)]
+              w-full
+              max-w-[560px]
+              rounded-[clamp(18px,2vw,28px)]
               bg-cover
               bg-center
             "
@@ -179,17 +200,18 @@ export default function Hero() {
             className="
               absolute
               right-0
-              top-[clamp(325px,33vw,448px)]
-              w-[min(100%,560px)]
+              top-[clamp(295px,33vw,448px)]
+              w-full
+              max-w-[560px]
               rounded-[10px]
               bg-[#292929]
-              px-4
-              py-[14px]
+              px-[clamp(14px,1.5vw,16px)]
+              py-[clamp(12px,1.2vw,14px)]
             "
           >
             <p
               className="
-                text-[clamp(0.8rem,1vw,1rem)]
+                text-[clamp(0.78rem,1vw,1rem)]
                 font-normal
                 leading-[1.45]
                 text-white

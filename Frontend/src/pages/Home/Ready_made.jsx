@@ -28,57 +28,96 @@ const problems = [
 
 export default function Problems() {
   return (
-    <section id="about" className="py-10">
-      <div className="container-page">
+    <section
+      id="about"
+      className="
+        w-full
+        py-[clamp(40px,5vw,60px)]
+        overflow-hidden
+      "
+    >
+      <div
+        className="
+          container-page
+          w-full
+          px-[clamp(16px,4vw,60px)]
+        "
+      >
+        {/* ================= HEADER ================= */}
+
         <div className="text-center">
           <h2
             className="
-              text-[60px]
+              mx-auto
+              max-w-[1000px]
+              text-[clamp(2rem,4.2vw,3.75rem)]
               font-semibold
               leading-[1.2]
+              tracking-[-0.02em]
               text-[#BCC7DB]
             "
           >
-            When "Ready-Made" <span className="text-[#fff]">Isn't Enough</span>
+            When "Ready-Made"{" "}
+            <span className="text-white">Isn't Enough</span>
           </h2>
 
           <p
             className="
-              mt-3
-              text-[clamp(1rem,1vw,4rem)]
+              mx-auto
+              mt-[clamp(12px,1.5vw,16px)]
+              max-w-[800px]
+              text-[clamp(0.875rem,1.1vw,1rem)]
               font-normal
               leading-[1.6]
               text-[#BCC7DB]
-              text-center
             "
           >
             Matching tells your story, but development solves your problems.{" "}
             <span className="text-white">
-              If you're <br /> feeling these pains,
+              If you're feeling these pains,
             </span>{" "}
             you need a custom solution.
           </p>
         </div>
 
-        <div className="m-10 grid gap-7 md:grid-cols-3">
+        {/* ================= PROBLEM CARDS ================= */}
+
+        <div
+          className="
+            mt-[clamp(32px,5vw,40px)]
+            grid
+            grid-cols-1
+            gap-[clamp(16px,2.5vw,28px)]
+            sm:grid-cols-2
+            lg:grid-cols-3
+          "
+        >
           {problems.map(({ icon, title, text, color }) => (
             <article
               key={title}
               className="
+                w-full
+                min-w-0
                 rounded-lg
                 border
                 border-white/10
                 bg-[#101011]
-                p-5
-                h-[225px]
+                p-[clamp(18px,2vw,20px)]
+                min-h-[225px]
+                transition-all
+                duration-300
+                hover:border-white/20
               "
             >
+              {/* ================= ICON ================= */}
+
               <div
                 className={`
-                  mb-7
+                  mb-[clamp(22px,2.5vw,28px)]
                   flex
-                  h-14
-                  w-14
+                  h-[clamp(48px,4vw,56px)]
+                  w-[clamp(48px,4vw,56px)]
+                  shrink-0
                   items-center
                   justify-center
                   rounded-full
@@ -86,23 +125,34 @@ export default function Problems() {
                   ${color}
                 `}
               >
-                <FontAwesomeIcon icon={icon} className="text-3xl" />
+                <FontAwesomeIcon
+                  icon={icon}
+                  className="
+                    text-[clamp(1.4rem,2.2vw,1.875rem)]
+                  "
+                />
               </div>
+
+              {/* ================= TITLE ================= */}
 
               <h3
                 className="
-                  text-[clamp(1.25rem,1.8vw,1.5rem)]
+                  text-[clamp(1.15rem,1.8vw,1.5rem)]
                   font-medium
                   leading-[1.2]
+                  text-white
                 "
               >
                 {title}
               </h3>
 
+              {/* ================= DESCRIPTION ================= */}
+
               <p
                 className="
-                  mt-3
-                  text-[clamp(0.875rem,0.9vw,0.9375rem)]
+                  mt-[clamp(10px,1vw,12px)]
+                  max-w-[480px]
+                  text-[clamp(0.8125rem,0.9vw,0.9375rem)]
                   font-normal
                   leading-[1.6]
                   text-white/45

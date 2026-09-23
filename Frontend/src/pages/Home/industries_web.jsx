@@ -79,7 +79,7 @@ export default function Industries() {
           </div>
         </div>
 
-        <div className="mt-7 text-center">
+        <div className="mt-7 text-center pb-15">
           <a
             href="/contact"
             className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-[clamp(9px, 4vw, 16px)] font-bold text-black"
