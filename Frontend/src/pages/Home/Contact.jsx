@@ -156,9 +156,7 @@ export default function Contact() {
         backgroundImage: `url(${CTA})`,
       }}
     >
-      {/* ================================================= */}
       {/* OUTER BORDER */}
-      {/* ================================================= */}
 
       <div
         className="
@@ -169,9 +167,7 @@ export default function Contact() {
           p-[clamp(0.75rem,3vw,3.75rem)]
         "
       >
-        {/* ================================================= */}
         {/* INNER CONTAINER */}
-        {/* ================================================= */}
 
         <div
           className="
@@ -187,9 +183,7 @@ export default function Contact() {
             lg:grid-cols-[0.9fr_1.1fr]
           "
         >
-          {/* ================================================= */}
           {/* LEFT CONTENT */}
-          {/* ================================================= */}
 
           <div
             className="
@@ -250,9 +244,7 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* ================================================= */}
           {/* FORM */}
-          {/* ================================================= */}
 
           <div className="min-w-0 w-full">
             <form

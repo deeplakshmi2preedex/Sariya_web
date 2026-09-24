@@ -81,6 +81,7 @@ export default function Process() {
             w-full
             min-w-0
             grid-cols-[repeat(auto-fit,minmax(min(100%,16rem),1fr))]
+            min-[900px]:max-[1400px]:grid-cols-2
             gap-[clamp(1rem,2vw,1.25rem)]
             p-0
           "
@@ -130,7 +131,7 @@ export default function Process() {
                   min-w-0
                   items-center
                   gap-[clamp(0.5rem,1vw,0.75rem)]
-                  text-[clamp(0.9375rem,2.2vw,1.5625rem)]
+                  text-[clamp(1rem,2.2vw,1.5625rem)]
                   font-normal
                   leading-[1.2]
                   text-white
@@ -140,8 +141,8 @@ export default function Process() {
                   <span
                     className="
                       flex
-                      h-[clamp(1.5rem,3vw,1.875rem)]
-                      w-[clamp(1.5rem,3vw,1.875rem)]
+                     h-[clamp(25px,4vw,30px)]
+                     w-[clamp(25px,4vw,30px)]
                       shrink-0
                       items-center
                       justify-center
@@ -185,7 +186,7 @@ export default function Process() {
                   w-full
                   min-w-0
                   break-words
-                  text-[clamp(0.75rem,1.5vw,0.875rem)]
+                  text-[clamp(0.875rem,1.5vw,0.875rem)]
                   font-normal
                   leading-[1.7]
                   tracking-[clamp(0.02em,0.08vw,0.075em)]

@@ -58,11 +58,14 @@ export default function Hero() {
             max-w-full
             break-words
             p-[clamp(0.5rem,3vw,3rem)]
-            text-[clamp(2rem,9vw,7.75rem)]
+           text-[clamp(25px,6.355vw,125px)]
+            min-[1025px]:text-[125px]
             font-bold
             leading-[0.9]
             tracking-[clamp(0.01em,0.1vw,0.075em)]
             text-white
+            max-[750px]:mx-auto
+            max-[750px]:text-center
           "
         >
           FAQ
