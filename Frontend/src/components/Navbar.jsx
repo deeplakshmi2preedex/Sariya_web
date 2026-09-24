@@ -259,8 +259,8 @@ export default function Navbar() {
                 ) : (
                   <Menu
                     className="
-          h-[clamp(18px,1.8vw,24px)]
-          w-[clamp(18px,1.8vw,24px)]
+          h-[clamp(25px,1.8vw,32px)]
+          w-[clamp(25px,1.8vw,32px)]
         "
                   />
                 )}

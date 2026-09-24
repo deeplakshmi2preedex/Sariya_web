@@ -26,7 +26,7 @@ function PlateformCard() {
           overflow-hidden
           rounded-[clamp(1.75rem,4vw,3rem)]
           grid-cols-1
-          min-[1025px]:grid-cols-2
+          min-[700px]:grid-cols-2
         "
       >
         {/* ================= IMAGE ================= */}

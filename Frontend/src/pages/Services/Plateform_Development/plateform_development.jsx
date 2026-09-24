@@ -2,7 +2,7 @@ import Hero from "./hero";
 import Intro from "./intro";
 import ECommerceCard from "./eCommerceCard";
 import DesignCard from "./designCard";
-import CTA from "./CTA";
+import CTA from "../../../components/contact";
 import Navbar from "../../../components/Navbar";
 
 function PlatformDevelopment() {

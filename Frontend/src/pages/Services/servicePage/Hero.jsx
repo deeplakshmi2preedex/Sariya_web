@@ -3,11 +3,11 @@ function Hero() {
     <section
       className="
         relative
-        min-h-[clamp(320px,45vw,580px)]
+        min-h-[clamp(190px,32vw,580px)]
+        min-[1025px]:min-h-[700px]
         w-full
         max-w-full
         overflow-hidden
-        min-[1025px]:min-h-[580px]
       "
     >
       <div
@@ -25,6 +25,7 @@ function Hero() {
           min-[1025px]:pb-0
           min-[1025px]:pt-10
           min-[1025px]:pl-8
+          
         "
       >
         <div
@@ -57,7 +58,8 @@ function Hero() {
               max-w-full
               break-words
               p-0
-              text-[clamp(32px,9vw,124.193px)]
+              text-[clamp(25px,6vw,125.451px)]
+              min-[1025px]:text-[125.451px]
               font-bold
               leading-[clamp(0.95,1vw,1.2)]
               tracking-[clamp(0.4px,0.08vw,1.2px)]
@@ -74,7 +76,7 @@ function Hero() {
               w-full
               max-w-[900px]
               break-words
-              text-[clamp(12px,1.5vw,18px)]
+              text-[clamp(14px,1.5vw,18px)]
               font-light
               leading-[clamp(1.4,1.8vw,1.625)]
               tracking-[clamp(0.2px,0.04vw,0.6px)]

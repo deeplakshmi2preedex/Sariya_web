@@ -3,7 +3,7 @@ import Hero from "./hero.jsx";
 import Intro from "./intro";
 import AICard from "./AIcard.jsx";
 import ERPcard from "./ERPcard.jsx";
-import CTA from "./CTA.jsx";
+import CTA from "../../../components/contact.jsx";
 
 function Workflow_automation() {
   return (

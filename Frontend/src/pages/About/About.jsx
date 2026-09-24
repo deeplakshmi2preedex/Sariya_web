@@ -1,7 +1,7 @@
 import Hero from "./Hero.jsx";
 import IntroSection from "./intro.jsx";
 import SariyaStandard from "./standards.jsx";
-import ContactSection from "./contact.jsx";
+import CTA from "../../components/contact.jsx";
 
 function About() {
   return (
@@ -15,7 +15,7 @@ function About() {
 
         <IntroSection />
         <SariyaStandard />
-        <ContactSection />
+        <CTA />
       </>
     </div>
   );

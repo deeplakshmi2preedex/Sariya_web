@@ -5,7 +5,7 @@ import ScalableCard from "./scableCard.jsx";
 import SolutionsCard from "./SolutionsCard.jsx";
 import UIDesignCard from "./UIDesignCard.jsx";
 import SupportCard from "./SupportCard.jsx";
-import CTA from "./CTA.jsx";
+import CTA from "../../../components/contact.jsx";
 
 function CustomDevelopment() {
   return (

@@ -52,9 +52,9 @@ export default function CompanyStats() {
         py-[clamp(3%,5vw,7%)]
       "
     >
-      {/* ================================================= */}
+      
       {/* MAIN CONTAINER */}
-      {/* ================================================= */}
+      
 
       <div
         className="
@@ -67,11 +67,11 @@ export default function CompanyStats() {
           border
           border-white/10
           bg-[#070707]
+          lg:min-h-[clamp(520px,38vw,650px)]
         "
       >
-        {/* ================================================= */}
+        
         {/* MAIN GRID */}
-        {/* ================================================= */}
 
         <div
           className="
@@ -82,9 +82,8 @@ export default function CompanyStats() {
             lg:grid-cols-[1.15fr_0.85fr]
           "
         >
-          {/* ================================================= */}
+          
           {/* LEFT — TESTIMONIAL */}
-          {/* ================================================= */}
 
           <div
             className="
@@ -96,11 +95,11 @@ export default function CompanyStats() {
               from-blue-900
               to-blue-950
               p-[clamp(1.25rem,4vw,3rem)]
+              lg:min-h-[clamp(520px,38vw,650px)]
             "
           >
-            {/* ================================================= */}
+            
             {/* SLIDER VIEWPORT */}
-            {/* ================================================= */}
 
             <div
               className="
@@ -110,9 +109,8 @@ export default function CompanyStats() {
                 overflow-hidden
               "
             >
-              {/* ================================================= */}
+             
               {/* SLIDER TRACK */}
-              {/* ================================================= */}
 
               <div
                 className="
@@ -309,9 +307,9 @@ export default function CompanyStats() {
             </div>
           </div>
 
-          {/* ================================================= */}
+          
           {/* RIGHT — COMPANY STATS */}
-          {/* ================================================= */}
+          
 
           <div
             className="
@@ -328,21 +326,21 @@ export default function CompanyStats() {
               backgroundImage: `url(${stats})`,
             }}
           >
-            {/* ================================================= */}
+            
             {/* STATS INNER CONTAINER */}
-            {/* ================================================= */}
-
+            
             <div
               className="
                 w-full
-                rounded-[clamp(1rem,2.5vw,2rem)]
-                bg-[radial-gradient(circle_at_20%_30%,#D2DBD8_0%,#30393F_35%,#1A1F24_65%,#D2DBD8_100%)]
-                p-[clamp(1rem,3vw,1.75rem)]
+                rounded-3xl
+                backdrop-blur-[20px] bg-black/40 border border-white/10
+                shadow-xl
+                p-[clamp(20px,3vw,32px)]
               "
             >
-              {/* ================================================= */}
+             
               {/* DESCRIPTION */}
-              {/* ================================================= */}
+             
 
               <p
                 className="

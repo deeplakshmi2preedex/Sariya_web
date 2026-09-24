@@ -41,7 +41,7 @@ export default function Hero() {
           <p
             className="
               mb-[clamp(20px,2.2vw,30px)]
-              text-[clamp(0.8rem,1.2vw,1.125rem)]
+              text-[clamp(0.8125rem,1.67vw,1.125rem)]
               font-bold
               leading-none
               tracking-[0.055em]
@@ -56,7 +56,7 @@ export default function Hero() {
           <h1
             className="
               max-w-full
-              text-[clamp(2rem,3.8vw,3.5rem)]
+              text-[clamp(1.5625rem,3.8vw,3.5rem)]
               font-semibold
               leading-[1.2]
               tracking-[0.01em]
@@ -79,15 +79,15 @@ export default function Hero() {
               mt-[clamp(22px,3vw,36px)]
               w-full
               max-w-[790px]
-              text-[clamp(0.8rem,1vw,1rem)]
+              text-[clamp(0.875rem,1vw,1rem)]
               font-normal
               leading-[1.65]
               text-white
             "
           >
-            You've outgrown basic templates. We craft “out-of-the-box”
-            software that centralizes your messy workflows into one
-            high-efficiency dashboard.
+            You've outgrown basic templates. We craft “out-of-the-box” software
+            that centralizes your messy workflows into one high-efficiency
+            dashboard.
           </p>
 
           {/* ================= BUTTONS ================= */}
@@ -99,6 +99,8 @@ export default function Hero() {
               flex-wrap
               items-center
               gap-[clamp(12px,2vw,32px)]
+              max-[750px]:flex-col
+              max-[750px]:items-start
             "
           >
             {/* AUTOMATE */}
@@ -115,7 +117,7 @@ export default function Hero() {
                 bg-blue-600
                 px-[clamp(18px,2.5vw,34px)]
                 py-[clamp(11px,1.2vw,15px)]
-                text-[clamp(0.72rem,1vw,1rem)]
+                text-[clamp(0.75rem,1vw,1rem)]
                 font-bold
                 whitespace-nowrap
                 text-white
@@ -127,7 +129,6 @@ export default function Hero() {
               "
             >
               AUTOMATE TODAY
-
               <ArrowUpRight
                 className="
                   h-[clamp(14px,1.3vw,17px)]
@@ -150,7 +151,7 @@ export default function Hero() {
                 bg-white
                 px-[clamp(20px,2.7vw,38px)]
                 py-[clamp(11px,1.2vw,15px)]
-                text-[clamp(0.72rem,1vw,1rem)]
+                text-[clamp(0.75rem,1vw,1rem)]
                 font-bold
                 whitespace-nowrap
                 text-[#082F7B]
@@ -203,17 +204,18 @@ export default function Hero() {
               top-[clamp(295px,33vw,448px)]
               w-full
               max-w-[560px]
-              rounded-[10px]
+              rounded-2xl
               bg-[#292929]
-              px-[clamp(14px,1.5vw,16px)]
-              py-[clamp(12px,1.2vw,14px)]
+              px-[clamp(10px,1vw,14px)]
+              py-[clamp(16px,1.5vw,20px)]
             "
           >
             <p
               className="
-                text-[clamp(0.78rem,1vw,1rem)]
+                text-[clamp(0.875rem,1vw,1rem)]
                 font-normal
-                leading-[1.45]
+                leading-[1.55]
+                tracking-[1.2px]
                 text-white
               "
             >

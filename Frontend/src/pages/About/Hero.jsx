@@ -9,7 +9,8 @@ export default function Hero() {
         hero-bg
         relative
         flex
-        min-h-[clamp(34rem,70vw,48.75rem)]
+       min-h-[clamp(190px,36vw,600px)]
+       min-[1025px]:min-h-[780px]
         w-full
         max-w-full
         items-center

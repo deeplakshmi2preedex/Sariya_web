@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AlertCircle, ChevronDown } from "lucide-react";
 import "flag-icons/css/flag-icons.min.css";
+import CTA from "../../assets/Home/CTA.png";
 
 const countries = [
   { name: "India", code: "+91", flag: "in" },
@@ -40,9 +41,7 @@ export default function Contact() {
     setErrors((prev) => ({
       ...prev,
       [name]: "",
-      ...(name === "firstName" || name === "lastName"
-        ? { fullName: "" }
-        : {}),
+      ...(name === "firstName" || name === "lastName" ? { fullName: "" } : {}),
     }));
   };
 
@@ -151,10 +150,11 @@ export default function Contact() {
         max-w-full
         overflow-hidden
         rounded-[clamp(1.25rem,3vw,2.5rem)]
-        bg-gradient-to-br
-        from-emerald-900
-        to-[#022C22]
+        
       "
+      style={{
+        backgroundImage: `url(${CTA})`,
+      }}
     >
       {/* ================================================= */}
       {/* OUTER BORDER */}
@@ -291,9 +291,7 @@ export default function Contact() {
                     placeholder="First name"
                   />
 
-                  <ErrorMessage
-                    message={errors.fullName || errors.firstName}
-                  />
+                  <ErrorMessage message={errors.fullName || errors.firstName} />
                 </div>
 
                 {/* LAST NAME */}
@@ -367,8 +365,7 @@ export default function Contact() {
                         value={country.code + country.name}
                         onChange={(e) => {
                           const selected = countries.find(
-                            (item) =>
-                              item.code + item.name === e.target.value,
+                            (item) => item.code + item.name === e.target.value,
                           );
 
                           if (selected) {

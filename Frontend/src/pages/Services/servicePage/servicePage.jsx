@@ -3,7 +3,7 @@ import Hero from "./Hero";
 import CustomCard from "./customCard";
 import PlateformCard from "./plateformCard.jsx";
 import WorkflowCard from "./workflowCard.jsx";
-import CTA from "./contact.jsx";
+import CTA from "../../../components/contact.jsx";
 
 export default function ServicePage() {
   return (
